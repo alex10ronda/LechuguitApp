@@ -15,6 +15,7 @@
 		756B17221EB0B76400BBB3EF /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17211EB0B76400BBB3EF /* ContainerViewController.swift */; };
 		756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */; };
 		756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17261EB0B79600BBB3EF /* MainViewController.swift */; };
+		756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		756B17211EB0B76400BBB3EF /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		756B17261EB0B79600BBB3EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +76,28 @@
 		756B17251EB0B77B00BBB3EF /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				756B172D1EB0F7DD00BBB3EF /* Presenters */,
+				756B172C1EB0F7CF00BBB3EF /* Controllers */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		756B172C1EB0F7CF00BBB3EF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				756B17211EB0B76400BBB3EF /* ContainerViewController.swift */,
 				756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */,
 				756B17261EB0B79600BBB3EF /* MainViewController.swift */,
 			);
-			name = GUI;
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		756B172D1EB0F7DD00BBB3EF /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */,
+			);
+			name = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */,
+				756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */,
 				756B17221EB0B76400BBB3EF /* ContainerViewController.swift in Sources */,
 				756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */,
 				756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */,

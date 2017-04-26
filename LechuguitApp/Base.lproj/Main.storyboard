@@ -156,7 +156,7 @@
                                     <constraint firstAttribute="width" constant="375" id="fSg-QV-Oth"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="I3N-ch-fcX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionCell" rowHeight="60" id="I3N-ch-fcX" customClass="OptionCell" customModule="LechuguitApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I3N-ch-fcX" id="D4g-Cn-nV6">
@@ -185,6 +185,10 @@
                                                 <constraint firstItem="zxN-F8-TXz" firstAttribute="leading" secondItem="KpN-Ly-OO4" secondAttribute="trailing" constant="33.5" id="u01-5G-MG4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="opImg" destination="KpN-Ly-OO4" id="M5g-wC-oLa"/>
+                                            <outlet property="opName" destination="zxN-F8-TXz" id="UC8-tC-d74"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -199,6 +203,9 @@
                             <constraint firstItem="xtJ-4M-PdY" firstAttribute="height" secondItem="EwE-ey-eKM" secondAttribute="height" multiplier="0.15" id="qAl-WS-Fy7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fBr-OL-GNf" id="u0P-Mf-Sl8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2M-55-jo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

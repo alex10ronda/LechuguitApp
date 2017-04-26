@@ -13,14 +13,19 @@ protocol SideMenuViewControllerDelegate {
     @objc optional func optionSelected()
 }
 
-class SideMenuViewController: UIViewController {
+class SideMenuViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var delegate: SideMenuViewControllerDelegate?
+    
+    var optionsPresenter: OptionsPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        optionsPresenter = OptionsPresenter()
+        tableView.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,15 +33,34 @@ class SideMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (self.optionsPresenter?.getCount())!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OptionCell", for: indexPath) as! OptionCell
+        
+        cell.configureCell(option: (self.optionsPresenter?.getOptionAt(index: indexPath.row))!)
+        
+        return cell
+    }
+ 
+}
 
+
+class OptionCell: UITableViewCell {
+    
+    @IBOutlet weak var opName: UILabel!
+   
+    @IBOutlet weak var opImg: UIImageView!
+    
+    func configureCell(option: Option){
+        self.opName.text = option.nameOption
+    }
+    
 }
