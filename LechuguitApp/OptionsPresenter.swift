@@ -15,10 +15,10 @@ class OptionsPresenter {
     
     init() {
         optionsArray = [Option]()
-        optionsArray.append(Option.init(name: "Tapas", img: ""))
-        optionsArray.append(Option.init(name: "Bebidas", img: ""))
-        optionsArray.append(Option.init(name: "Pedidos", img: ""))
-        optionsArray.append(Option.init(name: "Salir", img: ""))
+        optionsArray.append(Option.init(name: "Tapas", img: "ic_food"))
+        optionsArray.append(Option.init(name: "Bebidas", img: "ic_beer"))
+        optionsArray.append(Option.init(name: "Pedidos", img: "ic_order"))
+        optionsArray.append(Option.init(name: "Salir", img: "ic_exit"))
     }
     
     func getCount() -> Int {

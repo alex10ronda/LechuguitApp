@@ -61,6 +61,7 @@ class OptionCell: UITableViewCell {
     
     func configureCell(option: Option){
         self.opName.text = option.nameOption
+        self.opImg.image = UIImage(named: option.imgOption)
     }
     
 }
