@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */; };
+		756B17121EB0B71E00BBB3EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756B17101EB0B71E00BBB3EF /* Main.storyboard */; };
+		756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 756B17131EB0B71E00BBB3EF /* Tappas.xcdatamodeld */; };
+		756B17171EB0B71E00BBB3EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756B17161EB0B71E00BBB3EF /* Assets.xcassets */; };
+		756B171A1EB0B71E00BBB3EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756B17181EB0B71E00BBB3EF /* LaunchScreen.storyboard */; };
+		756B17221EB0B76400BBB3EF /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17211EB0B76400BBB3EF /* ContainerViewController.swift */; };
+		756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */; };
+		756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17261EB0B79600BBB3EF /* MainViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		756B17091EB0B71E00BBB3EF /* LechuguitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LechuguitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		756B17111EB0B71E00BBB3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		756B17141EB0B71E00BBB3EF /* Tappas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tappas.xcdatamodel; sourceTree = "<group>"; };
+		756B17161EB0B71E00BBB3EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		756B17191EB0B71E00BBB3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		756B171B1EB0B71E00BBB3EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		756B17211EB0B76400BBB3EF /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		756B17261EB0B79600BBB3EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		756B17061EB0B71E00BBB3EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		756B17001EB0B71E00BBB3EF = {
+			isa = PBXGroup;
+			children = (
+				756B170B1EB0B71E00BBB3EF /* LechuguitApp */,
+				756B170A1EB0B71E00BBB3EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		756B170A1EB0B71E00BBB3EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				756B17091EB0B71E00BBB3EF /* LechuguitApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		756B170B1EB0B71E00BBB3EF /* LechuguitApp */ = {
+			isa = PBXGroup;
+			children = (
+				756B17251EB0B77B00BBB3EF /* GUI */,
+				756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */,
+				756B17101EB0B71E00BBB3EF /* Main.storyboard */,
+				756B17161EB0B71E00BBB3EF /* Assets.xcassets */,
+				756B17181EB0B71E00BBB3EF /* LaunchScreen.storyboard */,
+				756B171B1EB0B71E00BBB3EF /* Info.plist */,
+				756B17131EB0B71E00BBB3EF /* Tappas.xcdatamodeld */,
+			);
+			path = LechuguitApp;
+			sourceTree = "<group>";
+		};
+		756B17251EB0B77B00BBB3EF /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				756B17211EB0B76400BBB3EF /* ContainerViewController.swift */,
+				756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */,
+				756B17261EB0B79600BBB3EF /* MainViewController.swift */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		756B17081EB0B71E00BBB3EF /* LechuguitApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 756B171E1EB0B71E00BBB3EF /* Build configuration list for PBXNativeTarget "LechuguitApp" */;
+			buildPhases = (
+				756B17051EB0B71E00BBB3EF /* Sources */,
+				756B17061EB0B71E00BBB3EF /* Frameworks */,
+				756B17071EB0B71E00BBB3EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LechuguitApp;
+			productName = Tappas;
+			productReference = 756B17091EB0B71E00BBB3EF /* LechuguitApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		756B17011EB0B71E00BBB3EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = bbva;
+				TargetAttributes = {
+					756B17081EB0B71E00BBB3EF = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 756B17041EB0B71E00BBB3EF /* Build configuration list for PBXProject "LechuguitApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 756B17001EB0B71E00BBB3EF;
+			productRefGroup = 756B170A1EB0B71E00BBB3EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				756B17081EB0B71E00BBB3EF /* LechuguitApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		756B17071EB0B71E00BBB3EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				756B171A1EB0B71E00BBB3EF /* LaunchScreen.storyboard in Resources */,
+				756B17171EB0B71E00BBB3EF /* Assets.xcassets in Resources */,
+				756B17121EB0B71E00BBB3EF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		756B17051EB0B71E00BBB3EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */,
+				756B17221EB0B76400BBB3EF /* ContainerViewController.swift in Sources */,
+				756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */,
+				756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */,
+				756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		756B17101EB0B71E00BBB3EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				756B17111EB0B71E00BBB3EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		756B17181EB0B71E00BBB3EF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				756B17191EB0B71E00BBB3EF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		756B171C1EB0B71E00BBB3EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		756B171D1EB0B71E00BBB3EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		756B171F1EB0B71E00BBB3EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LechuguitApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alejandro.LechuguitApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		756B17201EB0B71E00BBB3EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LechuguitApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alejandro.LechuguitApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		756B17041EB0B71E00BBB3EF /* Build configuration list for PBXProject "LechuguitApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				756B171C1EB0B71E00BBB3EF /* Debug */,
+				756B171D1EB0B71E00BBB3EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		756B171E1EB0B71E00BBB3EF /* Build configuration list for PBXNativeTarget "LechuguitApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				756B171F1EB0B71E00BBB3EF /* Debug */,
+				756B17201EB0B71E00BBB3EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		756B17131EB0B71E00BBB3EF /* Tappas.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				756B17141EB0B71E00BBB3EF /* Tappas.xcdatamodel */,
+			);
+			currentVersion = 756B17141EB0B71E00BBB3EF /* Tappas.xcdatamodel */;
+			path = Tappas.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 756B17011EB0B71E00BBB3EF /* Project object */;
+}
