@@ -11,6 +11,8 @@
 		756655B81EB1D3E3007419F2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B41EB1D3E3007419F2 /* FBSDKCoreKit.framework */; };
 		756655B91EB1D3E3007419F2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B51EB1D3E3007419F2 /* FBSDKLoginKit.framework */; };
 		756655BA1EB1D3E3007419F2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B61EB1D3E3007419F2 /* FBSDKShareKit.framework */; };
+		756655BC1EB22E61007419F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756655BB1EB22E61007419F2 /* LoginViewController.swift */; };
+		756655BF1EB22F54007419F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756655BE1EB22F54007419F2 /* Constants.swift */; };
 		756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */; };
 		756B17121EB0B71E00BBB3EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756B17101EB0B71E00BBB3EF /* Main.storyboard */; };
 		756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 756B17131EB0B71E00BBB3EF /* Tappas.xcdatamodeld */; };
@@ -27,6 +29,8 @@
 		756655B41EB1D3E3007419F2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		756655B51EB1D3E3007419F2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		756655B61EB1D3E3007419F2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		756655BB1EB22E61007419F2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		756655BE1EB22F54007419F2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		756B17091EB0B71E00BBB3EF /* LechuguitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LechuguitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756B17111EB0B71E00BBB3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +70,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		756655BD1EB22F27007419F2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				756655BE1EB22F54007419F2 /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		756B17001EB0B71E00BBB3EF = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +97,7 @@
 		756B170B1EB0B71E00BBB3EF /* LechuguitApp */ = {
 			isa = PBXGroup;
 			children = (
+				756655BD1EB22F27007419F2 /* Utils */,
 				756655B21EB1D385007419F2 /* Frameworks */,
 				756B17251EB0B77B00BBB3EF /* GUI */,
 				756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */,
@@ -112,6 +125,7 @@
 				756B17211EB0B76400BBB3EF /* ContainerViewController.swift */,
 				756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */,
 				756B17261EB0B79600BBB3EF /* MainViewController.swift */,
+				756655BB1EB22E61007419F2 /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -196,12 +210,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756655BC1EB22E61007419F2 /* LoginViewController.swift in Sources */,
 				756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */,
 				756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */,
 				756B17221EB0B76400BBB3EF /* ContainerViewController.swift in Sources */,
 				756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */,
 				756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */,
 				756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */,
+				756655BF1EB22F54007419F2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
