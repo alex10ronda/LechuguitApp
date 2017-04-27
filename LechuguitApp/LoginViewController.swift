@@ -33,7 +33,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "first_name, last_name, picture.type(large)"]).start { (connection, result, error) in
             
-            print(result)
+            if(result != nil){
+                self.redirectToMain()
+            }
+
         }
     }
     
@@ -41,6 +44,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    
+    func redirectToMain(){
+    
+        let containterViewController = ContainerViewController()
+        self.view.window?.rootViewController = containterViewController
+        self.view.window?.makeKeyAndVisible()
+
+    }
 
     /*
     // MARK: - Navigation
