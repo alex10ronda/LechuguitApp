@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		756655B71EB1D3E3007419F2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B31EB1D3E3007419F2 /* Bolts.framework */; };
+		756655B81EB1D3E3007419F2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B41EB1D3E3007419F2 /* FBSDKCoreKit.framework */; };
+		756655B91EB1D3E3007419F2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B51EB1D3E3007419F2 /* FBSDKLoginKit.framework */; };
+		756655BA1EB1D3E3007419F2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B61EB1D3E3007419F2 /* FBSDKShareKit.framework */; };
 		756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */; };
 		756B17121EB0B71E00BBB3EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756B17101EB0B71E00BBB3EF /* Main.storyboard */; };
 		756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 756B17131EB0B71E00BBB3EF /* Tappas.xcdatamodeld */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		756655B31EB1D3E3007419F2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		756655B41EB1D3E3007419F2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		756655B51EB1D3E3007419F2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		756655B61EB1D3E3007419F2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		756B17091EB0B71E00BBB3EF /* LechuguitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LechuguitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756B17111EB0B71E00BBB3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,12 +45,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756655BA1EB1D3E3007419F2 /* FBSDKShareKit.framework in Frameworks */,
+				756655B71EB1D3E3007419F2 /* Bolts.framework in Frameworks */,
+				756655B81EB1D3E3007419F2 /* FBSDKCoreKit.framework in Frameworks */,
+				756655B91EB1D3E3007419F2 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		756655B21EB1D385007419F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				756655B31EB1D3E3007419F2 /* Bolts.framework */,
+				756655B41EB1D3E3007419F2 /* FBSDKCoreKit.framework */,
+				756655B51EB1D3E3007419F2 /* FBSDKLoginKit.framework */,
+				756655B61EB1D3E3007419F2 /* FBSDKShareKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		756B17001EB0B71E00BBB3EF = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +85,7 @@
 		756B170B1EB0B71E00BBB3EF /* LechuguitApp */ = {
 			isa = PBXGroup;
 			children = (
+				756655B21EB1D385007419F2 /* Frameworks */,
 				756B17251EB0B77B00BBB3EF /* GUI */,
 				756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */,
 				756B17101EB0B71E00BBB3EF /* Main.storyboard */,
@@ -298,6 +322,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LechuguitApp",
+				);
 				INFOPLIST_FILE = LechuguitApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alejandro.LechuguitApp;
@@ -310,6 +338,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LechuguitApp",
+				);
 				INFOPLIST_FILE = LechuguitApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alejandro.LechuguitApp;
