@@ -14,7 +14,9 @@ protocol SideMenuViewControllerDelegate {
 }
 
 class SideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var profileImg: UIImageView!
     
+    @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var delegate: SideMenuViewControllerDelegate?
@@ -26,6 +28,12 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         optionsPresenter = OptionsPresenter()
         tableView.dataSource = self
         tableView.delegate = self
+        nameLbl.text = (Session.user?.name)! + " " + (Session.user?.lastName)!
+        if(Session.profileImg != nil){
+            profileImg.layer.cornerRadius = self.profileImg.frame.size.width / 2
+            profileImg.clipsToBounds = true
+            profileImg.image = Session.profileImg
+        }
         
     }
 

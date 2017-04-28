@@ -23,6 +23,8 @@
 		756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17261EB0B79600BBB3EF /* MainViewController.swift */; };
 		756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */; };
 		7578B2761EB315DF0074255D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B2751EB315DF0074255D /* Utils.swift */; };
+		7578B2791EB34D640074255D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B2781EB34D640074255D /* User.swift */; };
+		7578B27B1EB351890074255D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B27A1EB351890074255D /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		756B17261EB0B79600BBB3EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsPresenter.swift; sourceTree = "<group>"; };
 		7578B2751EB315DF0074255D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		7578B2781EB34D640074255D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7578B27A1EB351890074255D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		756B170B1EB0B71E00BBB3EF /* LechuguitApp */ = {
 			isa = PBXGroup;
 			children = (
+				7578B2771EB34D500074255D /* Model */,
 				756655BD1EB22F27007419F2 /* Utils */,
 				756655B21EB1D385007419F2 /* Frameworks */,
 				756B17251EB0B77B00BBB3EF /* GUI */,
@@ -139,6 +144,15 @@
 				756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */,
 			);
 			name = Presenters;
+			sourceTree = "<group>";
+		};
+		7578B2771EB34D500074255D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7578B2781EB34D640074255D /* User.swift */,
+				7578B27A1EB351890074255D /* Session.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +234,9 @@
 				756B17221EB0B76400BBB3EF /* ContainerViewController.swift in Sources */,
 				756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */,
 				756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */,
+				7578B27B1EB351890074255D /* Session.swift in Sources */,
 				756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */,
+				7578B2791EB34D640074255D /* User.swift in Sources */,
 				756655BF1EB22F54007419F2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

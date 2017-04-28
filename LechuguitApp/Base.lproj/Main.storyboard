@@ -232,6 +232,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameLbl" destination="YBj-Nd-UTd" id="Qmw-Gp-t9Z"/>
+                        <outlet property="profileImg" destination="e4k-Mk-ve9" id="9Zd-Np-wTF"/>
                         <outlet property="tableView" destination="fBr-OL-GNf" id="u0P-Mf-Sl8"/>
                     </connections>
                 </viewController>
