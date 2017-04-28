@@ -34,8 +34,10 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
 
         if(Session.profileImg != nil){
             profileImg.image = Session.profileImg
-        } 
+        }
         
+        self.tableView.tableFooterView = UIView()
+        self.tableView.isScrollEnabled = false
     }
 
     override func didReceiveMemoryWarning() {

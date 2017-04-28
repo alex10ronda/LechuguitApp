@@ -113,20 +113,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KI7-vY-792">
-                                <rect key="frame" x="166" y="216" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_carta" translatesAutoresizingMaskIntoConstraints="NO" id="lSi-l0-Ihp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bar Casa Moreno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWn-ve-WVH">
+                                <rect key="frame" x="37.5" y="58.5" width="300" height="64.5"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="El Lechuguita" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KI7-vY-792">
+                                <rect key="frame" x="37" y="100" width="300" height="88"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KI7-vY-792" firstAttribute="width" secondItem="lSi-l0-Ihp" secondAttribute="width" multiplier="0.8" id="F9g-lV-exJ"/>
+                            <constraint firstItem="fWn-ve-WVH" firstAttribute="width" secondItem="lSi-l0-Ihp" secondAttribute="width" multiplier="0.8" id="H4B-hW-89r"/>
+                            <constraint firstItem="KI7-vY-792" firstAttribute="centerX" secondItem="lSi-l0-Ihp" secondAttribute="centerX" id="WYf-rc-D6g"/>
+                            <constraint firstItem="lSi-l0-Ihp" firstAttribute="top" secondItem="fWn-ve-WVH" secondAttribute="bottom" constant="-123" id="YBO-cb-ayQ"/>
+                            <constraint firstItem="KI7-vY-792" firstAttribute="top" secondItem="fWn-ve-WVH" secondAttribute="bottom" constant="-23" id="YCI-e4-FNH"/>
+                            <constraint firstItem="lSi-l0-Ihp" firstAttribute="centerX" secondItem="RM8-Oq-QuG" secondAttribute="centerX" id="ZoD-JU-kCV"/>
+                            <constraint firstItem="lSi-l0-Ihp" firstAttribute="centerY" secondItem="RM8-Oq-QuG" secondAttribute="centerY" id="gFV-uh-DXa"/>
+                            <constraint firstItem="lSi-l0-Ihp" firstAttribute="height" secondItem="RM8-Oq-QuG" secondAttribute="height" id="np3-IW-XWR"/>
+                            <constraint firstItem="lSi-l0-Ihp" firstAttribute="width" secondItem="RM8-Oq-QuG" secondAttribute="width" id="qr9-yO-HNr"/>
+                            <constraint firstItem="fWn-ve-WVH" firstAttribute="centerX" secondItem="lSi-l0-Ihp" secondAttribute="centerX" id="ykH-Ms-Xtd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8i-9i-2uj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1244" y="120"/>
+            <point key="canvasLocation" x="-1244" y="119.1904047976012"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="rgn-6X-B3h">
@@ -243,6 +263,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_carta" width="99" height="234"/>
         <image name="ic_menu" width="28" height="28"/>
     </resources>
 </document>
