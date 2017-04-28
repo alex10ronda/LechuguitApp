@@ -17,13 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
-       /* window = UIWindow(frame: UIScreen.main.bounds)
         
-        let containterViewController = ContainerViewController()
-        window!.rootViewController = containterViewController
-        window!.makeKeyAndVisible()*/
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        if(FBSDKAccessToken.current() != nil){
+            print("Sesion iniciada")
+            window = UIWindow(frame: UIScreen.main.bounds)
+             
+             let containterViewController = ContainerViewController()
+             window!.rootViewController = containterViewController
+             window!.makeKeyAndVisible()
+        }else{
+            print("Hacer Login")
+        }
+
         
         return true
     }
