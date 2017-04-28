@@ -29,11 +29,12 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         nameLbl.text = (Session.user?.name)! + " " + (Session.user?.lastName)!
+        profileImg.layer.cornerRadius = self.profileImg.frame.size.width / 2
+        profileImg.clipsToBounds = true
+
         if(Session.profileImg != nil){
-            profileImg.layer.cornerRadius = self.profileImg.frame.size.width / 2
-            profileImg.clipsToBounds = true
             profileImg.image = Session.profileImg
-        }
+        } 
         
     }
 

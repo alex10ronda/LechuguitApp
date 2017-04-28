@@ -47,6 +47,7 @@ extension MainViewController: SideMenuViewControllerDelegate{
         switch position {
         case 3:
             print("Salir")
+            Utils.saveDataPreferences()
             let loginManager = FBSDKLoginManager()
             loginManager.logOut()
             self.navigationController?.present(UIStoryboard.loginViewController(), animated: true, completion: nil)
