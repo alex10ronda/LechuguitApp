@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     
-    
+    static let colorAlbero = UIColor(red: 255/255, green: 225/255, blue: 0/255, alpha: 1.0)
     
 }
