@@ -58,7 +58,7 @@ class ContainerViewController: UIViewController {
 }
 
 
-private extension UIStoryboard {
+extension UIStoryboard {
     
     class func mainStoryboard() -> UIStoryboard{
         return UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -70,6 +70,10 @@ private extension UIStoryboard {
     
     class func sideMenuViewController() -> SideMenuViewController {
         return mainStoryboard().instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+    }
+    
+    class func loginViewController() -> LoginViewController {
+        return mainStoryboard().instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
     }
     
 }

@@ -10,10 +10,10 @@ import UIKit
 
 @objc
 protocol SideMenuViewControllerDelegate {
-    @objc optional func optionSelected()
+    @objc optional func optionSelected(position:Int)
 }
 
-class SideMenuViewController: UIViewController, UITableViewDataSource {
+class SideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,6 +25,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         optionsPresenter = OptionsPresenter()
         tableView.dataSource = self
+        tableView.delegate = self
         
     }
 
@@ -50,6 +51,9 @@ class SideMenuViewController: UIViewController, UITableViewDataSource {
         return cell
     }
  
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.optionSelected!(position: indexPath.row)
+    }
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 @objc
 protocol MainControllerDelegate {
@@ -40,5 +41,21 @@ class MainViewController: UIViewController {
 
 
 extension MainViewController: SideMenuViewControllerDelegate{
+    
+    func optionSelected(position: Int) {
+        
+        switch position {
+        case 3:
+            print("Salir")
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut()
+            self.navigationController?.present(UIStoryboard.loginViewController(), animated: true, completion: nil)
+            
+            break
+        default:
+            print("Default")
+        }
+        
+    }
     
 }

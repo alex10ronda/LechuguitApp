@@ -22,6 +22,7 @@
 		756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */; };
 		756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17261EB0B79600BBB3EF /* MainViewController.swift */; };
 		756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */; };
+		7578B2761EB315DF0074255D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B2751EB315DF0074255D /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		756B17261EB0B79600BBB3EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsPresenter.swift; sourceTree = "<group>"; };
+		7578B2751EB315DF0074255D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				756655BE1EB22F54007419F2 /* Constants.swift */,
+				7578B2751EB315DF0074255D /* Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				756655BC1EB22E61007419F2 /* LoginViewController.swift in Sources */,
 				756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */,
+				7578B2761EB315DF0074255D /* Utils.swift in Sources */,
 				756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */,
 				756B17221EB0B76400BBB3EF /* ContainerViewController.swift in Sources */,
 				756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */,
