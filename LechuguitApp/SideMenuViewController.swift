@@ -36,8 +36,8 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             profileImg.image = Session.profileImg
         }
         
-        self.tableView.tableFooterView = UIView()
         self.tableView.isScrollEnabled = false
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +65,11 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.optionSelected!(position: indexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
 }
 
 
