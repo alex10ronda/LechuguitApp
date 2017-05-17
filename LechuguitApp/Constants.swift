@@ -13,4 +13,10 @@ struct Constants {
     
     static let colorAlbero = UIColor(red: 255/255, green: 225/255, blue: 0/255, alpha: 1.0)
     
+    struct endPoints {
+        
+        static let url = "http://192.168.60.1:8080/LechuSpring"
+        static let urlFindEstados = "/estado/get"
+    }
+    
 }

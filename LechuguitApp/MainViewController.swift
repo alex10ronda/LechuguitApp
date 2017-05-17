@@ -19,6 +19,9 @@ class MainViewController: UIViewController {
     
     var delegate: MainControllerDelegate?
 
+    @IBAction func btnComida(_ sender: Any) {
+        NetworkClient.sharedInstance.getAllEstados()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -11,6 +11,7 @@
 		7562DE121ECC6C6B0017968C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7562DE041ECC6B6B0017968C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7562DE151ECC6C6B0017968C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7562DE081ECC6B6B0017968C /* Alamofire.framework */; };
 		7562DE161ECC6C6B0017968C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7562DE081ECC6B6B0017968C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7562DE241ECC6D500017968C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562DE231ECC6D500017968C /* NetworkClient.swift */; };
 		756655B71EB1D3E3007419F2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B31EB1D3E3007419F2 /* Bolts.framework */; };
 		756655B81EB1D3E3007419F2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B41EB1D3E3007419F2 /* FBSDKCoreKit.framework */; };
 		756655B91EB1D3E3007419F2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756655B51EB1D3E3007419F2 /* FBSDKLoginKit.framework */; };
@@ -114,6 +115,7 @@
 
 /* Begin PBXFileReference section */
 		7562DDF81ECC6B6B0017968C /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		7562DE231ECC6D500017968C /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		756655B31EB1D3E3007419F2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		756655B41EB1D3E3007419F2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		756655B51EB1D3E3007419F2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7562DE221ECC6D360017968C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7562DE231ECC6D500017968C /* NetworkClient.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		756655B21EB1D385007419F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 		756B170B1EB0B71E00BBB3EF /* LechuguitApp */ = {
 			isa = PBXGroup;
 			children = (
+				7562DE221ECC6D360017968C /* Network */,
 				7578B2771EB34D500074255D /* Model */,
 				756655BD1EB22F27007419F2 /* Utils */,
 				756655B21EB1D385007419F2 /* Frameworks */,
@@ -410,6 +421,7 @@
 				756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */,
 				7578B2791EB34D640074255D /* User.swift in Sources */,
 				756655BF1EB22F54007419F2 /* Constants.swift in Sources */,
+				7562DE241ECC6D500017968C /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
