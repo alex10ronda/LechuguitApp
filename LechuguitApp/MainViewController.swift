@@ -48,6 +48,13 @@ extension MainViewController: SideMenuViewControllerDelegate{
     func optionSelected(position: Int) {
         
         switch position {
+        case 0:
+            print("Comida")
+            delegate?.collapsePanel!()
+            let comidaController = UIStoryboard.comidaViewController();
+            comidaController.delegate = self.delegate
+            self.navigationController?.pushViewController(comidaController, animated: true)
+            
         case 3:
             print("Salir")
             Utils.saveDataPreferences()

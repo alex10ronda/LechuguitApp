@@ -76,6 +76,10 @@ extension UIStoryboard {
         return mainStoryboard().instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
     }
     
+    class func comidaViewController() -> ComidaTableViewController {
+        return mainStoryboard().instantiateViewController(withIdentifier: "ComidaViewController") as!
+        ComidaTableViewController
+    }
 }
 
 extension ContainerViewController: MainControllerDelegate{

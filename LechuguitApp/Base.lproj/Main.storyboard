@@ -104,6 +104,42 @@
             </objects>
             <point key="canvasLocation" x="120.8" y="123.68815592203899"/>
         </scene>
+        <!--Comida-->
+        <scene sceneID="eT4-cQ-duL">
+            <objects>
+                <tableViewController storyboardIdentifier="ComidaViewController" id="711-iu-dt5" customClass="ComidaTableViewController" customModule="LechuguitApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rj9-h8-hAh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IGC-gv-hEN">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGC-gv-hEN" id="y7u-sA-Tv0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="711-iu-dt5" id="RHT-9X-C3n"/>
+                            <outlet property="delegate" destination="711-iu-dt5" id="fA4-KA-GXz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Comida" id="vv0-L7-NJn">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="jqg-rl-quz">
+                            <connections>
+                                <action selector="btnMenuClicked:" destination="711-iu-dt5" id="arr-mc-gnk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9y1-U8-gV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="124"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="MxA-xP-GFN">
             <objects>
