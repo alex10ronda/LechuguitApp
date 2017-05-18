@@ -18,12 +18,19 @@ protocol MainControllerDelegate {
 class MainViewController: UIViewController {
     
     var delegate: MainControllerDelegate?
+    
+    var activityIndicator: UIActivityIndicatorView?
 
     @IBAction func btnComida(_ sender: Any) {
         NetworkClient.sharedInstance.getAllEstados()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator?.color = UIColor.black
+        activityIndicator?.center = self.view.center
+        
+        self.view.addSubview(activityIndicator!)
 
         // Do any additional setup after loading the view.
     }
@@ -50,6 +57,8 @@ extension MainViewController: SideMenuViewControllerDelegate{
         switch position {
         case 0:
             print("Comida")
+            self.activityIndicator?.startAnimating()
+            ProductNetwork.sharedInstance.getAllProducts()
             delegate?.collapsePanel!()
             let comidaController = UIStoryboard.comidaViewController();
             comidaController.delegate = self.delegate

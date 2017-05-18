@@ -17,6 +17,7 @@ struct Constants {
         
         static let url = "http://192.168.60.1:8080/LechuSpring"
         static let urlFindEstados = "/estado/get"
+        static let urlFindAllProductos = "/producto/findAll"
     }
     
 }

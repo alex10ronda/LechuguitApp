@@ -19,6 +19,8 @@
 		756655BC1EB22E61007419F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756655BB1EB22E61007419F2 /* LoginViewController.swift */; };
 		756655BF1EB22F54007419F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756655BE1EB22F54007419F2 /* Constants.swift */; };
 		756796401ECDE98C002F57B1 /* ComidaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7567963F1ECDE98C002F57B1 /* ComidaTableViewController.swift */; };
+		756796481ECDEEF0002F57B1 /* Producto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756796471ECDEEF0002F57B1 /* Producto.swift */; };
+		7567964A1ECDEFE4002F57B1 /* ProductNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756796491ECDEFE4002F57B1 /* ProductNetwork.swift */; };
 		756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */; };
 		756B17121EB0B71E00BBB3EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756B17101EB0B71E00BBB3EF /* Main.storyboard */; };
 		756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 756B17131EB0B71E00BBB3EF /* Tappas.xcdatamodeld */; };
@@ -124,6 +126,8 @@
 		756655BB1EB22E61007419F2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		756655BE1EB22F54007419F2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7567963F1ECDE98C002F57B1 /* ComidaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComidaTableViewController.swift; sourceTree = "<group>"; };
+		756796471ECDEEF0002F57B1 /* Producto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Producto.swift; sourceTree = "<group>"; };
+		756796491ECDEFE4002F57B1 /* ProductNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNetwork.swift; sourceTree = "<group>"; };
 		756B17091EB0B71E00BBB3EF /* LechuguitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LechuguitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756B170C1EB0B71E00BBB3EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756B17111EB0B71E00BBB3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				7562DE231ECC6D500017968C /* NetworkClient.swift */,
+				756796491ECDEFE4002F57B1 /* ProductNetwork.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			children = (
 				7578B2781EB34D640074255D /* User.swift */,
 				7578B27A1EB351890074255D /* Session.swift */,
+				756796471ECDEEF0002F57B1 /* Producto.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -422,8 +428,10 @@
 				756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */,
 				756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */,
 				7578B27B1EB351890074255D /* Session.swift in Sources */,
+				756796481ECDEEF0002F57B1 /* Producto.swift in Sources */,
 				756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */,
 				7578B2791EB34D640074255D /* User.swift in Sources */,
+				7567964A1ECDEFE4002F57B1 /* ProductNetwork.swift in Sources */,
 				756655BF1EB22F54007419F2 /* Constants.swift in Sources */,
 				7562DE241ECC6D500017968C /* NetworkClient.swift in Sources */,
 			);
