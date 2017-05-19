@@ -18,4 +18,8 @@ class Session {
     
     static var arrayComida = [Producto]()
     
+    static var arrayComida25 = [Producto]()
+    
+    static var arrayComida5 = [Producto]()
+    
 }

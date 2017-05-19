@@ -55,10 +55,6 @@ extension MainViewController: SideMenuViewControllerDelegate{
     
     func optionSelected(position: Int) {
         
-        let container = (UIApplication.shared.keyWindow?.rootViewController as! ContainerViewController)
-        
-        
-        
         
         switch position {
         case 0:
@@ -69,14 +65,23 @@ extension MainViewController: SideMenuViewControllerDelegate{
         
         case 1:
             print("Comida")
+            self.delegate?.collapsePanel!()
             self.activityIndicator?.startAnimating()
             
             if(Session.arrayComida.count == 0){
-                ProductNetwork.sharedInstance.getAllProducts(completionHandler: { productos in
-                    Session.arrayComida = productos
-                    //container.currentController = UIStoryboard.comidaViewController()
+                ProductNetwork.sharedInstance.getAllProducts(completionHandler: { (comida, comida25, comida5) in
+                    Session.arrayComida = comida
+                    Session.arrayComida25 = comida25
+                    Session.arrayComida5 = comida5
                     self.redirectToTapas()
+                    
+                }, errorHandler: { () in
+                    self.activityIndicator?.stopAnimating()
+                    self.showAlert(msg: "No se ha podido conectar con el servidor")
+                
                 })
+                
+               
                 
             }else{
                 redirectToTapas()
@@ -98,11 +103,18 @@ extension MainViewController: SideMenuViewControllerDelegate{
     }
     
     func redirectToTapas(){
-       self.delegate?.collapsePanel!()
+       
        let comidaController = UIStoryboard.comidaViewController();
         comidaController.delegate = self.delegate
         self.navigationController?.pushViewController(comidaController, animated: true)
         self.activityIndicator?.stopAnimating()
+    }
+    
+    func showAlert(msg:String){
+        let alert = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
     }
     
 }

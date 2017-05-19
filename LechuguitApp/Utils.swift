@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 
+
 struct Utils {
     static func saveDataPreferences(){
         let preferences = UserDefaults.standard
@@ -29,4 +30,6 @@ struct Utils {
         try? Session.profileImg = UIImage(data: NSData(contentsOf: NSURL(string: (Session.user?.picture)!) as! URL) as Data)
         
     }
+    
+    
 }
