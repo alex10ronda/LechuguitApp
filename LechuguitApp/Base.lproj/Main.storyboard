@@ -166,6 +166,38 @@
             </objects>
             <point key="canvasLocation" x="864.79999999999995" y="123.68815592203899"/>
         </scene>
+        <!--Bebidas-->
+        <scene sceneID="Nu5-cx-VRy">
+            <objects>
+                <tableViewController id="DhJ-pa-UVG" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Gx-vQ-WDO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mxj-97-psP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mxj-97-psP" id="Egu-dP-YTB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DhJ-pa-UVG" id="Wdx-CG-gsn"/>
+                            <outlet property="delegate" destination="DhJ-pa-UVG" id="Bny-kd-Dct"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Bebidas" id="1EA-i1-6HP">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="FJ7-Cs-8AD"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwE-Lu-w2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527" y="125"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="MxA-xP-GFN">
             <objects>

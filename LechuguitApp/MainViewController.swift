@@ -80,12 +80,11 @@ extension MainViewController: SideMenuViewControllerDelegate{
                     self.showAlert(msg: "No se ha podido conectar con el servidor")
                 
                 })
-                
-               
-                
+  
             }else{
                 redirectToTapas()
             }
+        
             
             
         case 4:
