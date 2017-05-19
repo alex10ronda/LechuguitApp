@@ -16,4 +16,6 @@ class Session {
     
     static var profileImg: UIImage?
     
+    static var arrayComida = [Producto]()
+    
 }

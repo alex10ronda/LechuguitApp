@@ -30,6 +30,7 @@
 		756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */; };
 		756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17261EB0B79600BBB3EF /* MainViewController.swift */; };
 		756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */; };
+		757513D51ECEF43400783DC8 /* ProductoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757513D41ECEF43400783DC8 /* ProductoPresenter.swift */; };
 		7578B2761EB315DF0074255D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B2751EB315DF0074255D /* Utils.swift */; };
 		7578B2791EB34D640074255D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B2781EB34D640074255D /* User.swift */; };
 		7578B27B1EB351890074255D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B27A1EB351890074255D /* Session.swift */; };
@@ -139,6 +140,7 @@
 		756B17231EB0B77700BBB3EF /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		756B17261EB0B79600BBB3EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsPresenter.swift; sourceTree = "<group>"; };
+		757513D41ECEF43400783DC8 /* ProductoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductoPresenter.swift; sourceTree = "<group>"; };
 		7578B2751EB315DF0074255D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7578B2781EB34D640074255D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7578B27A1EB351890074255D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */,
+				757513D41ECEF43400783DC8 /* ProductoPresenter.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */,
 				7578B27B1EB351890074255D /* Session.swift in Sources */,
 				756796481ECDEEF0002F57B1 /* Producto.swift in Sources */,
+				757513D51ECEF43400783DC8 /* ProductoPresenter.swift in Sources */,
 				756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */,
 				7578B2791EB34D640074255D /* User.swift in Sources */,
 				7567964A1ECDEFE4002F57B1 /* ProductNetwork.swift in Sources */,

@@ -23,12 +23,15 @@ class ContainerViewController: UIViewController {
     var leftViewController:SideMenuViewController?
     
     var centerPanelExpandedOffset: CGFloat = 65
+    
+    //var currentController: UIViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         centerViewController = UIStoryboard.centerViewController()
         centerViewController.delegate = self
+        //currentController = centerViewController
         
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
         view.addSubview(centerNavigationController.view)

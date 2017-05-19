@@ -15,6 +15,7 @@ class OptionsPresenter {
     
     init() {
         optionsArray = [Option]()
+        optionsArray.append(Option.init(name: "Menu Principal", img: "ic_menu"))
         optionsArray.append(Option.init(name: "Tapas", img: "ic_food"))
         optionsArray.append(Option.init(name: "Bebidas", img: "ic_beer"))
         optionsArray.append(Option.init(name: "Pedidos", img: "ic_order"))

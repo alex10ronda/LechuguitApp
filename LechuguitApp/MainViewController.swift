@@ -52,19 +52,38 @@ class MainViewController: UIViewController {
 
 extension MainViewController: SideMenuViewControllerDelegate{
     
+    
     func optionSelected(position: Int) {
+        
+        let container = (UIApplication.shared.keyWindow?.rootViewController as! ContainerViewController)
+        
+        
+        
         
         switch position {
         case 0:
+            print("Volver al menu principal")
+            self.delegate?.collapsePanel!()
+            let mainController = navigationController?.viewControllers[0]
+            self.navigationController?.popToViewController(mainController!, animated: true)
+        
+        case 1:
             print("Comida")
             self.activityIndicator?.startAnimating()
-            ProductNetwork.sharedInstance.getAllProducts()
-            delegate?.collapsePanel!()
-            let comidaController = UIStoryboard.comidaViewController();
-            comidaController.delegate = self.delegate
-            self.navigationController?.pushViewController(comidaController, animated: true)
             
-        case 3:
+            if(Session.arrayComida.count == 0){
+                ProductNetwork.sharedInstance.getAllProducts(completionHandler: { productos in
+                    Session.arrayComida = productos
+                    //container.currentController = UIStoryboard.comidaViewController()
+                    self.redirectToTapas()
+                })
+                
+            }else{
+                redirectToTapas()
+            }
+            
+            
+        case 4:
             print("Salir")
             Utils.saveDataPreferences()
             let loginManager = FBSDKLoginManager()
@@ -76,6 +95,14 @@ extension MainViewController: SideMenuViewControllerDelegate{
             print("Default")
         }
         
+    }
+    
+    func redirectToTapas(){
+       self.delegate?.collapsePanel!()
+       let comidaController = UIStoryboard.comidaViewController();
+        comidaController.delegate = self.delegate
+        self.navigationController?.pushViewController(comidaController, animated: true)
+        self.activityIndicator?.stopAnimating()
     }
     
 }

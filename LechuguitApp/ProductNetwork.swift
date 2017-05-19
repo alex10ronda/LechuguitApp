@@ -14,9 +14,9 @@ class ProductNetwork: NSObject {
     
     static let sharedInstance: ProductNetwork = ProductNetwork()
     
-    func getAllProducts(/*completionHandler: @escaping ([Producto]) -> Void, errorHandler: @escaping (Void) -> Void*/) {
+    func getAllProducts(completionHandler: @escaping ([Producto]) -> Void/*, errorHandler: @escaping (Void) -> Void*/) {
         
-        Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlFindAllProductos).responseJSON { response in
+        Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlFindAllFood).responseJSON { response in
             
             if(response.result.isSuccess){
                 
@@ -24,14 +24,12 @@ class ProductNetwork: NSObject {
                 var arrayProductos = [Producto]()
                 for index in resultadoJSON{
                     let element = index as! NSDictionary
-                    let nombre = element.value(forKey: "nombre") as! String
-                    let precio = element.value(forKey: "precio") as! Double
-                    let id = element.value(forKey: "id") as! Int
-                    let img = element.value(forKey: "img") as? String
-                    
-                    let producto = Producto(idProducto: id, nombreProducto: nombre, imgProducto: img, precio: precio)
+                    let producto = Producto.getProductFromJson(element: element)
                     arrayProductos.append(producto)
                 }
+                
+                completionHandler(arrayProductos)
+                
             }
         }
         

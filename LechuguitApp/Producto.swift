@@ -24,4 +24,15 @@ class Producto:NSObject {
         self.precio = precio
     }
     
+    static func getProductFromJson(element: NSDictionary) -> Producto{
+        let nombre = element.value(forKey: "nombre") as! String
+        let precio = element.value(forKey: "precio") as! Double
+        let id = element.value(forKey: "id") as! Int
+        let img = element.value(forKey: "img") as? String
+        
+        let producto = Producto(idProducto: id, nombreProducto: nombre, imgProducto: img, precio: precio)
+        
+        return producto
+    }
+    
 }
