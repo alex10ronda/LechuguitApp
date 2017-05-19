@@ -25,22 +25,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="El Lechuguita" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-My-wbg">
-                                <rect key="frame" x="0.0" y="89" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="89" width="375" height="67"/>
                                 <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="RwR-Zm-i1a">
-                                <rect key="frame" x="134.5" y="202.5" width="106" height="80.5"/>
+                                <rect key="frame" x="135" y="203" width="106" height="81"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EX2-An-e5H">
-                                        <rect key="frame" x="34.5" y="0.0" width="37.5" height="20.5"/>
+                                        <rect key="frame" x="34" y="0.0" width="38" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4q-GR-aGO">
-                                        <rect key="frame" x="0.0" y="33.5" width="106" height="47"/>
+                                        <rect key="frame" x="0.0" y="34" width="106" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -48,20 +48,20 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhQ-A4-xgP">
-                                <rect key="frame" x="19" y="321" width="337.5" height="33.5"/>
+                                <rect key="frame" x="19" y="322" width="338" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voG-rs-uyn">
-                                <rect key="frame" x="28" y="394.5" width="319" height="46.5"/>
+                                <rect key="frame" x="28" y="395" width="319" height="47"/>
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Bebidas">
                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WS7-Tk-a2O">
-                                <rect key="frame" x="28" y="485" width="319" height="47"/>
+                                <rect key="frame" x="28" y="486" width="319" height="47"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Comida"/>
                                 <connections>
@@ -97,6 +97,7 @@
                                 <action selector="btnMenuClicked:" destination="BYZ-38-t0r" id="thb-YL-L8z"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_plane" id="4NU-5e-2aO"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
@@ -367,5 +368,6 @@
         <image name="ic_beer" width="25" height="31"/>
         <image name="ic_carta" width="99" height="234"/>
         <image name="ic_menu" width="28" height="28"/>
+        <image name="ic_plane" width="37" height="37"/>
     </resources>
 </document>

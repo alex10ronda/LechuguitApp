@@ -31,5 +31,13 @@ struct Utils {
         
     }
     
+    static func getStringCount() -> String{
+        if(Session.productCount == 0){
+            return ""
+        }else{
+            return (Session.productCount).description
+        }
+    }
+    
     
 }

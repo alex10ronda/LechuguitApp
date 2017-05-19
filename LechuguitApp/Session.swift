@@ -22,4 +22,6 @@ class Session {
     
     static var arrayComida5 = [Producto]()
     
+    static var productCount = 0
+    
 }
