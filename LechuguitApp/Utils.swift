@@ -21,7 +21,7 @@ struct Utils {
     }
     
     static func getDataPreferences(){
-        var preferences = UserDefaults.standard
+        let preferences = UserDefaults.standard
         let name = preferences.object(forKey: "name") as! String
         let lastName = preferences.object(forKey: "lastName") as! String
         let id = preferences.object(forKey: "id") as! String

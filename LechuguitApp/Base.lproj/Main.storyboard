@@ -171,17 +171,39 @@
         <scene sceneID="Nu5-cx-VRy">
             <objects>
                 <tableViewController storyboardIdentifier="BebidaViewController" id="DhJ-pa-UVG" customClass="BebidaTableViewController" customModule="LechuguitApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Gx-vQ-WDO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Gx-vQ-WDO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mxj-97-psP">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductoCell" id="mxj-97-psP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mxj-97-psP" id="Egu-dP-YTB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-cy-GBb">
+                                            <rect key="frame" x="28" y="8" width="63.5" height="63.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Gcb-cy-GBb" secondAttribute="height" multiplier="1:1" id="2H8-ap-prl"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHw-PI-fra">
+                                            <rect key="frame" x="140" y="28" width="215" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Gcb-cy-GBb" firstAttribute="leading" secondItem="Egu-dP-YTB" secondAttribute="leadingMargin" constant="20" id="9RU-XU-T3x"/>
+                                        <constraint firstItem="Gcb-cy-GBb" firstAttribute="height" secondItem="Egu-dP-YTB" secondAttribute="height" multiplier="0.8" id="HVR-7H-HGs"/>
+                                        <constraint firstItem="QHw-PI-fra" firstAttribute="centerY" secondItem="Egu-dP-YTB" secondAttribute="centerY" id="SsP-99-oSU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QHw-PI-fra" secondAttribute="trailing" constant="12" id="kN2-Wr-Q3J"/>
+                                        <constraint firstItem="QHw-PI-fra" firstAttribute="leading" secondItem="Gcb-cy-GBb" secondAttribute="trailing" constant="48" id="lHp-mc-vn1"/>
+                                        <constraint firstItem="Gcb-cy-GBb" firstAttribute="centerY" secondItem="Egu-dP-YTB" secondAttribute="centerY" id="lq1-ef-qJQ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -201,7 +223,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwE-Lu-w2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="125"/>
+            <point key="canvasLocation" x="1526.5" y="124.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="MxA-xP-GFN">
