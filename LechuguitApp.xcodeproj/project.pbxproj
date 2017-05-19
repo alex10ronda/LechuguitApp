@@ -31,6 +31,7 @@
 		756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B17261EB0B79600BBB3EF /* MainViewController.swift */; };
 		756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */; };
 		757513D51ECEF43400783DC8 /* ProductoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757513D41ECEF43400783DC8 /* ProductoPresenter.swift */; };
+		757513DE1ECF1C9D00783DC8 /* BebidaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757513DD1ECF1C9D00783DC8 /* BebidaTableViewController.swift */; };
 		7578B2761EB315DF0074255D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B2751EB315DF0074255D /* Utils.swift */; };
 		7578B2791EB34D640074255D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B2781EB34D640074255D /* User.swift */; };
 		7578B27B1EB351890074255D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578B27A1EB351890074255D /* Session.swift */; };
@@ -141,6 +142,7 @@
 		756B17261EB0B79600BBB3EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		756B172E1EB0F7EF00BBB3EF /* OptionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsPresenter.swift; sourceTree = "<group>"; };
 		757513D41ECEF43400783DC8 /* ProductoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductoPresenter.swift; sourceTree = "<group>"; };
+		757513DD1ECF1C9D00783DC8 /* BebidaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BebidaTableViewController.swift; sourceTree = "<group>"; };
 		7578B2751EB315DF0074255D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7578B2781EB34D640074255D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7578B27A1EB351890074255D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				756B17261EB0B79600BBB3EF /* MainViewController.swift */,
 				756655BB1EB22E61007419F2 /* LoginViewController.swift */,
 				7567963F1ECDE98C002F57B1 /* ComidaTableViewController.swift */,
+				757513DD1ECF1C9D00783DC8 /* BebidaTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757513DE1ECF1C9D00783DC8 /* BebidaTableViewController.swift in Sources */,
 				756655BC1EB22E61007419F2 /* LoginViewController.swift in Sources */,
 				756796401ECDE98C002F57B1 /* ComidaTableViewController.swift in Sources */,
 				756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */,

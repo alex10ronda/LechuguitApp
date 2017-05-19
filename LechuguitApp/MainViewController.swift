@@ -85,6 +85,12 @@ extension MainViewController: SideMenuViewControllerDelegate{
                 redirectToTapas()
             }
         
+        case 2:
+            print("Bebidas")
+            self.delegate?.togglePanel!()
+            self.activityIndicator?.startAnimating()
+            redirectToBebidas()
+            
             
             
         case 4:
@@ -103,9 +109,16 @@ extension MainViewController: SideMenuViewControllerDelegate{
     
     func redirectToTapas(){
        
-       let comidaController = UIStoryboard.comidaViewController();
+       let comidaController = UIStoryboard.comidaViewController()
         comidaController.delegate = self.delegate
         self.navigationController?.pushViewController(comidaController, animated: true)
+        self.activityIndicator?.stopAnimating()
+    }
+    
+    func redirectToBebidas(){
+        let bebidaController = UIStoryboard.bebidaViewController()
+        bebidaController.delegate = self.delegate
+        self.navigationController?.pushViewController(bebidaController, animated: true)
         self.activityIndicator?.stopAnimating()
     }
     

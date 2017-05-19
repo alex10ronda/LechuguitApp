@@ -124,7 +124,7 @@ class ComidaTableViewController: UITableViewController {
     // MARK: - Navigation
     
     @IBAction func btnMenuClicked(_ sender: Any) {
-        delegate?.togglePanel!()
+         delegate?.togglePanel!()
     }
 }
 

@@ -83,6 +83,11 @@ extension UIStoryboard {
         return mainStoryboard().instantiateViewController(withIdentifier: "ComidaViewController") as!
         ComidaTableViewController
     }
+    
+    class func bebidaViewController() -> BebidaTableViewController {
+        return mainStoryboard().instantiateViewController(withIdentifier: "BebidaViewController") as!
+        BebidaTableViewController
+    }
 }
 
 extension ContainerViewController: MainControllerDelegate{
