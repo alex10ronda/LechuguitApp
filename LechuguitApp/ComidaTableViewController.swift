@@ -39,9 +39,9 @@ class ComidaTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductoCell", for: indexPath) as! ProductoCell
 
-
+        cell.configureCell(producto: (self.productoPresenter?.getComida(pos: indexPath.row))!)
         return cell
     }
     
@@ -86,5 +86,19 @@ class ComidaTableViewController: UITableViewController {
     
     @IBAction func btnMenuClicked(_ sender: Any) {
         delegate?.togglePanel!()
+    }
+}
+
+class ProductoCell: UITableViewCell{
+    
+    @IBOutlet weak var productImg: UIImageView!
+    @IBOutlet weak var productName: UILabel!
+    
+    func configureCell(producto:Producto){
+        if(producto.imgProducto != nil){
+            productImg.image = UIImage(named: producto.imgProducto!)
+        }
+        
+        productName.text = producto.nombreProducto
     }
 }

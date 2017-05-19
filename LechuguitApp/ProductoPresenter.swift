@@ -17,8 +17,10 @@ class ProductoPresenter:NSObject {
     }
     
     func getCount() -> Int{
-        
         return self.arrayComida.count
-        
+    }
+    
+    func getComida(pos: Int) -> Producto{
+        return arrayComida[pos]
     }
 }

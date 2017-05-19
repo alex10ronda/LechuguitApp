@@ -108,18 +108,44 @@
         <scene sceneID="eT4-cQ-duL">
             <objects>
                 <tableViewController storyboardIdentifier="ComidaViewController" id="711-iu-dt5" customClass="ComidaTableViewController" customModule="LechuguitApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="75" sectionHeaderHeight="18" sectionFooterHeight="18" id="Rj9-h8-hAh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="80" sectionHeaderHeight="18" sectionFooterHeight="18" id="Rj9-h8-hAh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductoCell" id="IGC-gv-hEN">
-                                <rect key="frame" x="0.0" y="56" width="375" height="75"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductoCell" id="IGC-gv-hEN" customClass="ProductoCell" customModule="LechuguitApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGC-gv-hEN" id="y7u-sA-Tv0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_beer" translatesAutoresizingMaskIntoConstraints="NO" id="WMj-Pe-7v7">
+                                            <rect key="frame" x="28" y="8" width="63.5" height="63.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="WMj-Pe-7v7" secondAttribute="height" multiplier="1:1" id="AaH-g5-Lg6"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-jn-mHI">
+                                            <rect key="frame" x="140" y="28" width="215" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="JHH-jn-mHI" secondAttribute="trailing" constant="12" id="0e2-B1-NIm"/>
+                                        <constraint firstItem="JHH-jn-mHI" firstAttribute="centerY" secondItem="y7u-sA-Tv0" secondAttribute="centerY" id="91p-Yh-s0f"/>
+                                        <constraint firstItem="WMj-Pe-7v7" firstAttribute="leading" secondItem="y7u-sA-Tv0" secondAttribute="leadingMargin" constant="20" id="9xa-ZO-jKo"/>
+                                        <constraint firstItem="JHH-jn-mHI" firstAttribute="leading" secondItem="WMj-Pe-7v7" secondAttribute="trailing" constant="48.5" id="k25-jw-Zx8"/>
+                                        <constraint firstItem="WMj-Pe-7v7" firstAttribute="height" secondItem="y7u-sA-Tv0" secondAttribute="height" multiplier="0.8" id="ljI-tB-855"/>
+                                        <constraint firstItem="WMj-Pe-7v7" firstAttribute="centerY" secondItem="y7u-sA-Tv0" secondAttribute="centerY" id="p3F-Xr-dbd"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="productImg" destination="WMj-Pe-7v7" id="X78-0L-fW1"/>
+                                    <outlet property="productName" destination="JHH-jn-mHI" id="QZt-cK-bZA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -138,7 +164,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y1-U8-gV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="124"/>
+            <point key="canvasLocation" x="864.79999999999995" y="123.68815592203899"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="MxA-xP-GFN">
@@ -302,6 +328,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_beer" width="25" height="31"/>
         <image name="ic_carta" width="99" height="234"/>
         <image name="ic_menu" width="28" height="28"/>
     </resources>
