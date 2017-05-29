@@ -39,6 +39,11 @@ class ContainerViewController: UIViewController {
         
         centerNavigationController.didMove(toParentViewController: self)
         
+        Session.countBadge.setImage(UIImage(named: "ic_plane"), for: UIControlState.normal)
+        
+        Session.countBadge.badgeString = Utils.getStringCount()
+        Session.countBadge.badgeEdgeInsets=UIEdgeInsets.init(top:12, left: 0, bottom: 0, right: 10)
+        
     }
 
     override func didReceiveMemoryWarning() {

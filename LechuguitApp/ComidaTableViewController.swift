@@ -12,19 +12,14 @@ class ComidaTableViewController: UITableViewController {
     
     var delegate: MainControllerDelegate?
     var productoPresenter: ProductoPresenter?
-    var countBadge: MIBadgeButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         productoPresenter = ProductoPresenter()
         
-        countBadge = MIBadgeButton(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
-        countBadge.setImage(UIImage(named: "ic_plane"), for: UIControlState.normal)
         
-        countBadge.badgeString = Utils.getStringCount()
-        countBadge.badgeEdgeInsets=UIEdgeInsets.init(top:12, left: 0, bottom: 0, right: 10)
-        
-        var barbutton: UIBarButtonItem = UIBarButtonItem(customView: countBadge)
+        var barbutton: UIBarButtonItem = UIBarButtonItem(customView: Session.countBadge)
         
         self.navigationItem.rightBarButtonItem = barbutton
 
@@ -106,6 +101,7 @@ class ComidaTableViewController: UITableViewController {
         
             tableView.deselectRow(at: indexPath, animated: true)
             let alertStepper = StepperAlertViewController(title: "Indique la cantidad", message: "\n\n\n", preferredStyle: .alert)
+            //alertStepper.countButton = countBadge
             present(alertStepper, animated: true, completion: nil)
     }
     

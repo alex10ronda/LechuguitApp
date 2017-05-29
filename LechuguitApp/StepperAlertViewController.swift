@@ -11,6 +11,7 @@ import UIKit
 class StepperAlertViewController: UIAlertController {
 
     var labelCount:UILabel?
+    //var countButton: MIBadgeButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,12 @@ class StepperAlertViewController: UIAlertController {
         labelCount?.text = "0"
         self.view.addSubview(labelCount!)
         
-        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default) { (action) in
+            Session.productCount = Session.productCount + Int(stepper.value)
+            Session.countBadge.badgeString = Utils.getStringCount()
+            self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: Session.countBadge)
+            
+        }
         let cancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         self.addAction(aceptar)
         self.addAction(cancelar)

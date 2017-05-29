@@ -31,6 +31,11 @@ class MainViewController: UIViewController {
         activityIndicator?.center = self.view.center
         
         self.view.addSubview(activityIndicator!)
+        
+        var barbutton: UIBarButtonItem = UIBarButtonItem(customView: Session.countBadge)
+        
+        self.navigationItem.rightBarButtonItem = barbutton
+
 
         // Do any additional setup after loading the view.
     }

@@ -22,12 +22,14 @@ struct Utils {
     
     static func getDataPreferences(){
         let preferences = UserDefaults.standard
-        let name = preferences.object(forKey: "name") as! String
-        let lastName = preferences.object(forKey: "lastName") as! String
-        let id = preferences.object(forKey: "id") as! String
-        let picture = preferences.object(forKey: "picture") as! String
-        Session.user = User(name: name, lastName: lastName, picture: picture, idUser: id)
-        try? Session.profileImg = UIImage(data: NSData(contentsOf: NSURL(string: (Session.user?.picture)!) as! URL) as Data)
+        if (preferences.object(forKey: "name") != nil){
+            let name = preferences.object(forKey: "name") as! String
+            let lastName = preferences.object(forKey: "lastName") as! String
+            let id = preferences.object(forKey: "id") as! String
+            let picture = preferences.object(forKey: "picture") as! String
+            Session.user = User(name: name, lastName: lastName, picture: picture, idUser: id)
+            try? Session.profileImg = UIImage(data: NSData(contentsOf: NSURL(string: (Session.user?.picture)!) as! URL) as Data)
+        }
         
     }
     
@@ -39,5 +41,9 @@ struct Utils {
         }
     }
     
+  
+    
+    
+   
     
 }
