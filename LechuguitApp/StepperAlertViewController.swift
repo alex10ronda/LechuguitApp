@@ -12,6 +12,7 @@ class StepperAlertViewController: UIAlertController {
 
     var labelCount:UILabel?
     var producto:Producto?
+    var isComida: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,11 @@ class StepperAlertViewController: UIAlertController {
             Session.countBadge.badgeString = Utils.getStringCount()
             self.parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: Session.countBadge)
             Session.pedido.append(ProductoPedido.init(producto: self.producto!, cant: Int(stepper.value)))
+            if(self.isComida)! {
+                Session.FLAG_COMIDA = 1
+            }else{
+                Session.FLAG_BEBIDA = 1
+            }
             
         }
         let cancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)

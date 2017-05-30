@@ -49,6 +49,31 @@ class ContainerViewController: UIViewController {
     
     func moveToPedido(sender: UIBarButtonItem){
         print(Session.pedido)
+        
+        
+        if(Session.FLAG_BEBIDA == 0 && Session.FLAG_COMIDA == 1){
+            let alert = UIAlertController(title: "Aviso", message: "No has pedido nada para beber", preferredStyle: .alert)
+            
+            let bebidas = UIAlertAction(title: "Ir a Bebidas", style: .default, handler: { (action) in
+                self.centerViewController.optionSelected(position: 2)
+            })
+            let cancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+            alert.addAction(bebidas)
+            alert.addAction(cancelar)
+            present(alert, animated: true, completion: nil)
+            
+        } else if(Session.FLAG_COMIDA == 0 && Session.FLAG_BEBIDA == 1){
+            let alert = UIAlertController(title: "Aviso", message: "No has pedido nada para comer", preferredStyle: .alert)
+            
+            let bebidas = UIAlertAction(title: "Ir a Tapas", style: .default, handler: { (action) in
+                self.centerViewController.optionSelected(position: 1)
+            })
+            let cancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+            alert.addAction(bebidas)
+            alert.addAction(cancelar)
+            present(alert, animated: true, completion: nil)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

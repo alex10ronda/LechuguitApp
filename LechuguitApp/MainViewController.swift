@@ -93,7 +93,7 @@ extension MainViewController: SideMenuViewControllerDelegate{
             
         case 2:
             print("Bebidas")
-            self.delegate?.togglePanel!()
+            self.delegate?.collapsePanel!()
             self.activityIndicator?.startAnimating()
             
             if(Session.arrayBebidas.count == 0){

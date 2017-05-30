@@ -107,7 +107,7 @@ class ComidaTableViewController: UITableViewController {
             }else{
                  alertStepper.producto = productoPresenter?.getComida5(pos: indexPath.row)
             }
-
+            alertStepper.isComida = true
             present(alertStepper, animated: true, completion: nil)
     }
     

@@ -111,7 +111,7 @@ class BebidaViewCell: UITableViewCell{
             productImg.image = UIImage(named: producto.imgProducto!)
         }
         
-        productName.text = producto.nombreProducto + "€"
-        precio.text = (producto.precio).description
+        productName.text = producto.nombreProducto
+        precio.text = (producto.precio).description + "€"
     }
 }

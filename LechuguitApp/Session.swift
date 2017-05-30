@@ -30,5 +30,9 @@ class Session {
     
     static var arrayBebidas = [Producto]()
     
+    static var FLAG_COMIDA = 0
+    
+    static var FLAG_BEBIDA = 0
+    
     
 }
