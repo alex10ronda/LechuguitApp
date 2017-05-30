@@ -45,4 +45,26 @@ class ProductNetwork: NSObject {
         
     }
     
+    
+    func getDrinks(completionHandler: @escaping ([Producto]) -> Void, errorHandler: @escaping (Void) -> Void){
+        
+        Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlFindDrinks).responseJSON { (response) in
+            
+            if(response.result.isSuccess){
+                
+                var arrayBebidas = [Producto]()
+                let resultadoJSON = response.result.value as! NSArray
+                for index in resultadoJSON {
+                    
+                    let element = index as! NSDictionary
+                    let producto = Producto.getProductFromJson(element: element)
+                    arrayBebidas.append(producto)
+                }
+                completionHandler(arrayBebidas)
+            }else{
+                errorHandler()
+            }
+        }
+    }
+    
 }

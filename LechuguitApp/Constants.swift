@@ -19,12 +19,14 @@ struct Constants {
         static let urlFindEstados = "/estado/get"
         static let urlFindAllFood = "/producto/findAllFood"
         static let urlSaveUser = "/cliente/add"
+        static let urlFindDrinks = "/producto/findAllDrink"
     }
     
     struct cadenas {
         
         static let MSG_ERROR = "Ha ocurrido un error"
         static let MSG_REINTENTAR = "Inténtelo de nuevo"
+        static let MSG_ERROR_CONEXION = "No se ha podido conectar con el servidor"
         
     }
     

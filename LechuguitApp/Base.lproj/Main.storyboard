@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductoCell" id="mxj-97-psP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BebidaCell" id="mxj-97-psP" customClass="BebidaViewCell" customModule="LechuguitApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mxj-97-psP" id="Egu-dP-YTB">
@@ -189,7 +189,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHw-PI-fra">
-                                            <rect key="frame" x="140" y="28" width="215" height="23"/>
+                                            <rect key="frame" x="140" y="28" width="172" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0b-76-pYf">
+                                            <rect key="frame" x="320" y="29" width="47" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -198,12 +204,20 @@
                                     <constraints>
                                         <constraint firstItem="Gcb-cy-GBb" firstAttribute="leading" secondItem="Egu-dP-YTB" secondAttribute="leadingMargin" constant="20" id="9RU-XU-T3x"/>
                                         <constraint firstItem="Gcb-cy-GBb" firstAttribute="height" secondItem="Egu-dP-YTB" secondAttribute="height" multiplier="0.8" id="HVR-7H-HGs"/>
+                                        <constraint firstItem="V0b-76-pYf" firstAttribute="centerY" secondItem="Egu-dP-YTB" secondAttribute="centerY" id="Lj0-bD-VDC"/>
+                                        <constraint firstItem="V0b-76-pYf" firstAttribute="leading" secondItem="QHw-PI-fra" secondAttribute="trailing" constant="8" id="MwP-eY-xiv"/>
                                         <constraint firstItem="QHw-PI-fra" firstAttribute="centerY" secondItem="Egu-dP-YTB" secondAttribute="centerY" id="SsP-99-oSU"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="QHw-PI-fra" secondAttribute="trailing" constant="12" id="kN2-Wr-Q3J"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="V0b-76-pYf" secondAttribute="trailing" id="hcS-yE-5Jg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QHw-PI-fra" secondAttribute="trailing" constant="55" id="kN2-Wr-Q3J"/>
                                         <constraint firstItem="QHw-PI-fra" firstAttribute="leading" secondItem="Gcb-cy-GBb" secondAttribute="trailing" constant="48" id="lHp-mc-vn1"/>
                                         <constraint firstItem="Gcb-cy-GBb" firstAttribute="centerY" secondItem="Egu-dP-YTB" secondAttribute="centerY" id="lq1-ef-qJQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="precio" destination="V0b-76-pYf" id="K6g-Zs-ffz"/>
+                                    <outlet property="productImg" destination="Gcb-cy-GBb" id="DYv-SO-J8C"/>
+                                    <outlet property="productName" destination="QHw-PI-fra" id="v2J-w6-sIW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -222,7 +236,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwE-Lu-w2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526.5" y="124.5"/>
+            <point key="canvasLocation" x="1525.5999999999999" y="123.68815592203899"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="MxA-xP-GFN">

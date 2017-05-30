@@ -28,5 +28,7 @@ class Session {
     
     static var pedido = [ProductoPedido]()
     
+    static var arrayBebidas = [Producto]()
+    
     
 }

@@ -11,15 +11,16 @@ import UIKit
 class BebidaTableViewController: UITableViewController {
     
     var delegate: MainControllerDelegate?
+    var bebidaPresenter: ProductoPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        bebidaPresenter = ProductoPresenter()
+        
+        var barbutton: UIBarButtonItem = UIBarButtonItem(customView: Session.countBadge)
+        
+        self.navigationItem.rightBarButtonItem = barbutton
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,23 +32,23 @@ class BebidaTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return (bebidaPresenter?.getCountBebida())!
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BebidaCell", for: indexPath) as! BebidaViewCell
 
-        // Configure the cell...
+        cell.configureCell(producto: (bebidaPresenter?.getBebida(pos: indexPath.row))!)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -97,4 +98,20 @@ class BebidaTableViewController: UITableViewController {
          delegate?.togglePanel!()
     }
 
+}
+
+class BebidaViewCell: UITableViewCell{
+    
+    @IBOutlet weak var precio: UILabel!
+    @IBOutlet weak var productImg: UIImageView!
+    @IBOutlet weak var productName: UILabel!
+    
+    func configureCell(producto: Producto) {
+        if(producto.imgProducto != nil){
+            productImg.image = UIImage(named: producto.imgProducto!)
+        }
+        
+        productName.text = producto.nombreProducto + "€"
+        precio.text = (producto.precio).description
+    }
 }

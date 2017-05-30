@@ -18,9 +18,7 @@ class ComidaTableViewController: UITableViewController {
         super.viewDidLoad()
         productoPresenter = ProductoPresenter()
         
-        
         var barbutton: UIBarButtonItem = UIBarButtonItem(customView: Session.countBadge)
-        
         
         self.navigationItem.rightBarButtonItem = barbutton
         

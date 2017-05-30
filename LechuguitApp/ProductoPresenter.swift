@@ -13,11 +13,13 @@ class ProductoPresenter:NSObject {
     var arrayComida = [Producto]()
     var arrayComida25 = [Producto]()
     var arrayComida5 = [Producto]()
+    var arrayBebida = [Producto]()
     
     override init() {
         self.arrayComida = Session.arrayComida
         self.arrayComida25 = Session.arrayComida25
         self.arrayComida5 = Session.arrayComida5
+        self.arrayBebida = Session.arrayBebidas
     }
     
     func getCount() -> Int{
@@ -32,6 +34,10 @@ class ProductoPresenter:NSObject {
         return self.arrayComida5.count
     }
     
+    func getCountBebida() -> Int{
+        return self.arrayBebida.count
+    }
+    
     func getComida(pos: Int) -> Producto{
         return arrayComida[pos]
     }
@@ -44,5 +50,10 @@ class ProductoPresenter:NSObject {
     func getComida5(pos: Int) -> Producto{
         return arrayComida5[pos]
     }
+    
+    func getBebida(pos: Int) -> Producto{
+        return arrayBebida[pos]
+    }
+
 
 }

@@ -82,7 +82,7 @@ extension MainViewController: SideMenuViewControllerDelegate{
                     
                 }, errorHandler: { () in
                     self.activityIndicator?.stopAnimating()
-                    self.showAlert(msg: "No se ha podido conectar con el servidor")
+                    self.showAlert(msg: Constants.cadenas.MSG_ERROR_CONEXION)
                 
                 })
   
@@ -90,11 +90,24 @@ extension MainViewController: SideMenuViewControllerDelegate{
                 redirectToTapas()
             }
         
+            
         case 2:
             print("Bebidas")
             self.delegate?.togglePanel!()
             self.activityIndicator?.startAnimating()
-            redirectToBebidas()
+            
+            if(Session.arrayBebidas.count == 0){
+                ProductNetwork.sharedInstance.getDrinks(completionHandler: { (productos) in
+                    Session.arrayBebidas = productos
+                    self.redirectToBebidas()
+                }, errorHandler: { () in
+                    self.activityIndicator?.stopAnimating()
+                    self.showAlert(msg: Constants.cadenas.MSG_ERROR_CONEXION)
+                })
+            }else{
+                redirectToBebidas()
+            }
+            
             
             
             
