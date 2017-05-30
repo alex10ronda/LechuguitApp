@@ -27,6 +27,8 @@ struct Constants {
         static let MSG_ERROR = "Ha ocurrido un error"
         static let MSG_REINTENTAR = "Inténtelo de nuevo"
         static let MSG_ERROR_CONEXION = "No se ha podido conectar con el servidor"
+        static let MSG_PEDIR_BEBIDA = "No has pedido nada para beber"
+        static let MSG_PEDIR_COMIDA = "No has pedido nada para comer"
         
     }
     

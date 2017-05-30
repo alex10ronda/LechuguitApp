@@ -94,6 +94,15 @@ class BebidaTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let stepperAlert = StepperAlertViewController(title: "Indique la cantidad", message: "\n\n\n", preferredStyle: .alert)
+        stepperAlert.producto = self.bebidaPresenter?.getBebida(pos: indexPath.row)
+        stepperAlert.isComida = false
+        present(stepperAlert, animated: true, completion: nil)
+    }
+    
     @IBAction func btnMenuClicked(_ sender: Any) {
          delegate?.togglePanel!()
     }

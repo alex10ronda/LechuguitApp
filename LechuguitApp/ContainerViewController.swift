@@ -52,7 +52,7 @@ class ContainerViewController: UIViewController {
         
         
         if(Session.FLAG_BEBIDA == 0 && Session.FLAG_COMIDA == 1){
-            let alert = UIAlertController(title: "Aviso", message: "No has pedido nada para beber", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Aviso", message: Constants.cadenas.MSG_PEDIR_BEBIDA, preferredStyle: .alert)
             
             let bebidas = UIAlertAction(title: "Ir a Bebidas", style: .default, handler: { (action) in
                 self.centerViewController.optionSelected(position: 2)
@@ -63,7 +63,7 @@ class ContainerViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             
         } else if(Session.FLAG_COMIDA == 0 && Session.FLAG_BEBIDA == 1){
-            let alert = UIAlertController(title: "Aviso", message: "No has pedido nada para comer", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Aviso", message: Constants.cadenas.MSG_PEDIR_COMIDA, preferredStyle: .alert)
             
             let bebidas = UIAlertAction(title: "Ir a Tapas", style: .default, handler: { (action) in
                 self.centerViewController.optionSelected(position: 1)
