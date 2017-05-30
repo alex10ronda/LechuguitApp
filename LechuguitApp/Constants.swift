@@ -18,6 +18,14 @@ struct Constants {
         static let url = "http://192.168.60.1:8080/LechuSpring"
         static let urlFindEstados = "/estado/get"
         static let urlFindAllFood = "/producto/findAllFood"
+        static let urlSaveUser = "/cliente/add"
+    }
+    
+    struct cadenas {
+        
+        static let MSG_ERROR = "Ha ocurrido un error"
+        static let MSG_REINTENTAR = "Inténtelo de nuevo"
+        
     }
     
 }

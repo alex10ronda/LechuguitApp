@@ -21,8 +21,9 @@ class ComidaTableViewController: UITableViewController {
         
         var barbutton: UIBarButtonItem = UIBarButtonItem(customView: Session.countBadge)
         
+        
         self.navigationItem.rightBarButtonItem = barbutton
-
+        
       
     }
 
@@ -101,7 +102,14 @@ class ComidaTableViewController: UITableViewController {
         
             tableView.deselectRow(at: indexPath, animated: true)
             let alertStepper = StepperAlertViewController(title: "Indique la cantidad", message: "\n\n\n", preferredStyle: .alert)
-            //alertStepper.countButton = countBadge
+            if(indexPath.section == 0){
+                alertStepper.producto = productoPresenter?.getComida(pos: indexPath.row)
+            }else if(indexPath.section == 1){
+                 alertStepper.producto = productoPresenter?.getComida25(pos: indexPath.row)
+            }else{
+                 alertStepper.producto = productoPresenter?.getComida5(pos: indexPath.row)
+            }
+
             present(alertStepper, animated: true, completion: nil)
     }
     

@@ -26,5 +26,7 @@ class Session {
     
     static var countBadge = MIBadgeButton(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40))
     
+    static var pedido = [ProductoPedido]()
+    
     
 }

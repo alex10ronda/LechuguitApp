@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751A6D051EDC7CC50040A8C5 /* ProductoPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A6D041EDC7CC50040A8C5 /* ProductoPedido.swift */; };
+		751A6D0E1EDC81D80040A8C5 /* UserNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A6D0D1EDC81D80040A8C5 /* UserNetwork.swift */; };
 		7562DE111ECC6C6B0017968C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7562DE041ECC6B6B0017968C /* Alamofire.framework */; };
 		7562DE121ECC6C6B0017968C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7562DE041ECC6B6B0017968C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7562DE151ECC6C6B0017968C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7562DE081ECC6B6B0017968C /* Alamofire.framework */; };
@@ -121,6 +123,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		751A6D041EDC7CC50040A8C5 /* ProductoPedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductoPedido.swift; sourceTree = "<group>"; };
+		751A6D0D1EDC81D80040A8C5 /* UserNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
 		7562DDF81ECC6B6B0017968C /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		7562DE231ECC6D500017968C /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		756655B31EB1D3E3007419F2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			children = (
 				7562DE231ECC6D500017968C /* NetworkClient.swift */,
 				756796491ECDEFE4002F57B1 /* ProductNetwork.swift */,
+				751A6D0D1EDC81D80040A8C5 /* UserNetwork.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				7578B2781EB34D640074255D /* User.swift */,
 				7578B27A1EB351890074255D /* Session.swift */,
 				756796471ECDEEF0002F57B1 /* Producto.swift */,
+				751A6D041EDC7CC50040A8C5 /* ProductoPedido.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -435,10 +441,12 @@
 				756655BC1EB22E61007419F2 /* LoginViewController.swift in Sources */,
 				756796401ECDE98C002F57B1 /* ComidaTableViewController.swift in Sources */,
 				7575146F1ECF3ED100783DC8 /* MIBadgeButton.swift in Sources */,
+				751A6D051EDC7CC50040A8C5 /* ProductoPedido.swift in Sources */,
 				756B17151EB0B71E00BBB3EF /* Tappas.xcdatamodeld in Sources */,
 				7578B2761EB315DF0074255D /* Utils.swift in Sources */,
 				756B172F1EB0F7EF00BBB3EF /* OptionsPresenter.swift in Sources */,
 				756B17221EB0B76400BBB3EF /* ContainerViewController.swift in Sources */,
+				751A6D0E1EDC81D80040A8C5 /* UserNetwork.swift in Sources */,
 				756B17271EB0B79600BBB3EF /* MainViewController.swift in Sources */,
 				757513E01ECF388F00783DC8 /* StepperAlertViewController.swift in Sources */,
 				756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */,

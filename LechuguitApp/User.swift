@@ -24,6 +24,15 @@ class User: NSObject {
         self.picture = picture
         
     }
+    
+    func toJSON() -> [String:Any]{
+        var json = [String: Any]()
+        json.updateValue(self.idUser, forKey: "id")
+        json.updateValue(self.name, forKey: "nombre")
+        json.updateValue(self.lastName, forKey: "apellido")
+        return json
+        
+    }
   
     
     

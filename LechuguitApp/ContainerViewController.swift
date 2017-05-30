@@ -43,7 +43,12 @@ class ContainerViewController: UIViewController {
         
         Session.countBadge.badgeString = Utils.getStringCount()
         Session.countBadge.badgeEdgeInsets=UIEdgeInsets.init(top:12, left: 0, bottom: 0, right: 10)
+        Session.countBadge.addTarget(self, action: #selector(moveToPedido(sender:)), for: .touchUpInside)
         
+    }
+    
+    func moveToPedido(sender: UIBarButtonItem){
+        print(Session.pedido)
     }
 
     override func didReceiveMemoryWarning() {

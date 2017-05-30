@@ -60,7 +60,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 Session.user = User(name: name, lastName: lastName, picture: pictureUrl, idUser: id)
                 try? Session.profileImg = UIImage(data: NSData(contentsOf: NSURL(string: pictureUrl) as! URL) as Data)
                 
-                self.redirectToMain()
+                UserNetwork.sharedInstance.saveOrUpdate(user: Session.user!, completionHandler: { () in
+                     self.redirectToMain()
+                }, errorHandler: { () in
+                    let alert = UIAlertController(title: Constants.cadenas.MSG_ERROR, message: Constants.cadenas.MSG_REINTENTAR, preferredStyle: .alert)
+                    self.present(alert, animated: true, completion: nil)
+                })
+                
+                
+                
                 
             }
             self.activityIndicator?.stopAnimating()
