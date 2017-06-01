@@ -73,9 +73,17 @@ class ContainerViewController: UIViewController {
             alert.addAction(cancelar)
             present(alert, animated: true, completion: nil)
             
+        } else if(Session.FLAG_COMIDA == 1 && Session.FLAG_BEBIDA == 1){
+            showPedidoController();
         }
+        
     }
-
+    
+    func showPedidoController(){
+        
+        let pedidoController = UIStoryboard.mainStoryboard().instantiateViewController(withIdentifier: "PedidoViewController") as! PedidoViewController
+        self.centerNavigationController.pushViewController(pedidoController, animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

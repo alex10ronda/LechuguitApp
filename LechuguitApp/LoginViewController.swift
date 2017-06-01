@@ -64,6 +64,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                      self.redirectToMain()
                 }, errorHandler: { () in
                     let alert = UIAlertController(title: Constants.cadenas.MSG_ERROR, message: Constants.cadenas.MSG_REINTENTAR, preferredStyle: .alert)
+                    let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
                     self.present(alert, animated: true, completion: nil)
                 })
                 
