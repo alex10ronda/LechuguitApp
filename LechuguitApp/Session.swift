@@ -28,11 +28,17 @@ class Session {
     
     static var pedido = [ProductoPedido]()
     
+    static var pedidoComida = [ProductoPedido]()
+    
+    static var pedidoBebida = [ProductoPedido]()
+    
     static var arrayBebidas = [Producto]()
     
     static var FLAG_COMIDA = 0
     
     static var FLAG_BEBIDA = 0
+    
+    static var pedidoPrice = 0.0
     
     
 }
