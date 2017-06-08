@@ -329,6 +329,9 @@
                                 <color key="backgroundColor" red="0.99249571719999996" green="0.89742676070000005" blue="0.1214386256" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Pedir"/>
+                                <connections>
+                                    <action selector="btnPedir:" destination="lUK-U6-eeE" eventType="touchUpInside" id="0hP-9f-SzI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
