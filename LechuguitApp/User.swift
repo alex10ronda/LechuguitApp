@@ -15,6 +15,7 @@ class User: NSObject {
     let lastName: String
     let picture: String
     let idUser: String
+    var total: Double
     
     init(name: String, lastName: String, picture: String, idUser:String) {
         
@@ -22,7 +23,7 @@ class User: NSObject {
         self.lastName = lastName
         self.idUser = idUser
         self.picture = picture
-        
+        self.total = 0.0
     }
     
     func toJSON() -> [String:Any]{

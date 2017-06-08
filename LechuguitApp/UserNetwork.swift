@@ -20,6 +20,10 @@ class UserNetwork:NSObject {
         let params = user.toJSON() 
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             if(response.result.isSuccess){
+                let respuesta = response.result.value as! NSDictionary
+                let total = respuesta.value(forKey: "total") as! Double
+                Session.user?.total = total
+                
                 completionHandler()
             }else{
                 errorHandler()

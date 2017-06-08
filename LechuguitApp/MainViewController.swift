@@ -17,6 +17,7 @@ protocol MainControllerDelegate {
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var lblTotal: UILabel!
     var delegate: MainControllerDelegate?
     
     var activityIndicator: UIActivityIndicatorView?
@@ -36,6 +37,7 @@ class MainViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = barbutton
 
+        lblTotal.text = ((Session.user?.total)?.description)! + "0 €"
 
         // Do any additional setup after loading the view.
     }

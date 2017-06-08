@@ -57,7 +57,9 @@ class ContainerViewController: UIViewController {
             let bebidas = UIAlertAction(title: "Ir a Bebidas", style: .default, handler: { (action) in
                 self.centerViewController.optionSelected(position: 2)
             })
-            let cancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+            let cancelar = UIAlertAction(title: "Pedir", style: .cancel, handler: {(action) in
+                self.showPedidoController()
+            })
             alert.addAction(bebidas)
             alert.addAction(cancelar)
             present(alert, animated: true, completion: nil)
@@ -68,7 +70,9 @@ class ContainerViewController: UIViewController {
             let bebidas = UIAlertAction(title: "Ir a Tapas", style: .default, handler: { (action) in
                 self.centerViewController.optionSelected(position: 1)
             })
-            let cancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+            let cancelar = UIAlertAction(title: "Pedio", style: .cancel, handler: {(action) in
+                self.showPedidoController()
+            })
             alert.addAction(bebidas)
             alert.addAction(cancelar)
             present(alert, animated: true, completion: nil)

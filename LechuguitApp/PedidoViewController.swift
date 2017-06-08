@@ -23,8 +23,12 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
         pedidoAmostrar = Session.pedidoComida
         lblPrecio.text = Session.pedidoPrice.description + " €"
         
+        tableView.layer.masksToBounds = true
+        tableView.layer.borderWidth = 0.5
+        tableView.layer.cornerRadius = tableView.frame.height / 16.0
+        tableView.layer.borderColor = UIColor.blue.cgColor
+        
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

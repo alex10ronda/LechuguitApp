@@ -18,6 +18,7 @@ struct Utils {
         preferences.set(Session.user?.lastName, forKey: "lastName")
         preferences.set(Session.user?.idUser, forKey: "id")
         preferences.set(Session.user?.picture, forKey: "picture")
+        preferences.set(Session.user?.total, forKey: "total")
     }
     
     static func getDataPreferences(){
@@ -27,8 +28,12 @@ struct Utils {
             let lastName = preferences.object(forKey: "lastName") as! String
             let id = preferences.object(forKey: "id") as! String
             let picture = preferences.object(forKey: "picture") as! String
+            let total = preferences.object(forKey: "total") as! Double
+        
             Session.user = User(name: name, lastName: lastName, picture: picture, idUser: id)
+            Session.user?.total = total
             try? Session.profileImg = UIImage(data: NSData(contentsOf: NSURL(string: (Session.user?.picture)!) as! URL) as Data)
+            
         }
         
     }
