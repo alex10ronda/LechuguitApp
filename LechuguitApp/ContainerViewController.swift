@@ -62,7 +62,11 @@ class ContainerViewController: UIViewController {
             })
             alert.addAction(bebidas)
             alert.addAction(cancelar)
-            present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: {
+                alert.view.superview?.isUserInteractionEnabled = true
+                alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertClose(sender:))))
+
+            })
             
         } else if(Session.FLAG_COMIDA == 0 && Session.FLAG_BEBIDA == 1){
             let alert = UIAlertController(title: "Aviso", message: Constants.cadenas.MSG_PEDIR_COMIDA, preferredStyle: .alert)
@@ -75,12 +79,19 @@ class ContainerViewController: UIViewController {
             })
             alert.addAction(bebidas)
             alert.addAction(cancelar)
-            present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: {
+                alert.view.superview?.isUserInteractionEnabled = true
+                alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertClose(sender:))))
+            })
             
         } else if(Session.FLAG_COMIDA == 1 && Session.FLAG_BEBIDA == 1){
             showPedidoController();
         }
         
+    }
+    
+    func alertClose(sender: UITapGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func showPedidoController(){

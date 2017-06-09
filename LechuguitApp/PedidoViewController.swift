@@ -68,7 +68,7 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func btnPedir(_ sender: Any) {
         
         let json = pedidoToJSON(comidas: Session.pedidoComida , bebidas: Session.pedidoBebida)        
-        print(json)
+        
     }
     
     func pedidoToJSON(comidas: [ProductoPedido], bebidas: [ProductoPedido]) -> [Dictionary<String, Int>] {
