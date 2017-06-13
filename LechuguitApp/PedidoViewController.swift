@@ -13,6 +13,9 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var lblPrecio: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    
+    var activityIndicator: UIActivityIndicatorView?
+    
     var pedidoAmostrar = [ProductoPedido]()
     
     override func viewDidLoad() {
@@ -27,6 +30,11 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.layer.borderWidth = 0.5
         tableView.layer.cornerRadius = tableView.frame.height / 16.0
         tableView.layer.borderColor = UIColor.blue.cgColor
+        
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator?.color = UIColor.black
+        activityIndicator?.center = self.view.center
+        self.view.addSubview(activityIndicator!)
         
 
     }
@@ -67,8 +75,15 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func btnPedir(_ sender: Any) {
         
+        self.activityIndicator?.startAnimating()
+        
         let json = ProductoPedido.pedidoToJSON(comidas: Session.pedidoComida , bebidas: Session.pedidoBebida)
-        PedidoNetwork.sharedInstance.savePedido(pedidoJSON: json)
+        PedidoNetwork.sharedInstance.savePedido(pedidoJSON: json, completionHandler: { 
+            print("Exito")
+            self.activityIndicator?.stopAnimating()
+        }) { 
+            print("Fallo")
+        }
     }
     
     }

@@ -14,7 +14,7 @@ class PedidoNetwork: NSObject {
     
     static let sharedInstance: PedidoNetwork = PedidoNetwork()
     
-    func savePedido(pedidoJSON: [Dictionary<String, Int>]){
+    func savePedido(pedidoJSON: [Dictionary<String, Int>], completionHandler: @escaping () -> (), errorHandler: @escaping () -> ()){
         
         var params = Dictionary<String,Any>()
         params.updateValue(Session.user?.idUser, forKey: "userId")
@@ -22,7 +22,14 @@ class PedidoNetwork: NSObject {
         
         Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlSavePedido, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             if(response.result.isSuccess){
-                print(response.result.value)
+                let respuesta = response.result.value as! Dictionary<String,Bool>
+                if(respuesta["isOK"] == true){
+                    completionHandler()
+                }else{
+                    errorHandler()
+                }
+            }else{
+                errorHandler()
             }
         }
     }
