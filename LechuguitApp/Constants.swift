@@ -20,6 +20,7 @@ struct Constants {
         static let urlFindAllFood = "/producto/findAllFood"
         static let urlSaveUser = "/cliente/add"
         static let urlFindDrinks = "/producto/findAllDrink"
+        static let urlSavePedido = "/pedido/new"
     }
     
     struct cadenas {

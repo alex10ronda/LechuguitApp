@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView?
 
     @IBAction func btnComida(_ sender: Any) {
-        NetworkClient.sharedInstance.getAllEstados()
+       
     }
     override func viewDidLoad() {
         super.viewDidLoad()

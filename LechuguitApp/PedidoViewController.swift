@@ -67,29 +67,11 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func btnPedir(_ sender: Any) {
         
-        let json = pedidoToJSON(comidas: Session.pedidoComida , bebidas: Session.pedidoBebida)        
-        
+        let json = ProductoPedido.pedidoToJSON(comidas: Session.pedidoComida , bebidas: Session.pedidoBebida)
+        PedidoNetwork.sharedInstance.savePedido(pedidoJSON: json)
     }
     
-    func pedidoToJSON(comidas: [ProductoPedido], bebidas: [ProductoPedido]) -> [Dictionary<String, Int>] {
-        
-        var pedido = [Dictionary<String, Int>]()
-        var componente = Dictionary<String, Int>()
-        
-        for comida in comidas{
-            componente.updateValue(comida.producto.idProducto, forKey: "id")
-            componente.updateValue(comida.cantidad , forKey: "cantidad")
-            pedido.append(componente)
-        }
-        
-        for bebida in bebidas {
-            componente.updateValue(bebida.producto.idProducto, forKey: "id")
-            componente.updateValue(bebida.cantidad, forKey: "cantidad")
-            pedido.append(componente)
-        }
-        return pedido
     }
-}
 
 class PedidoViewCell: UITableViewCell {
     
