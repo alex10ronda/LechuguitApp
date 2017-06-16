@@ -22,8 +22,9 @@ class PedidoNetwork: NSObject {
         
         Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlSavePedido, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             if(response.result.isSuccess){
-                let respuesta = response.result.value as! Dictionary<String,Bool>
-                if(respuesta["isOK"] == true){
+                let respuesta = response.result.value as! Dictionary<String,Any>
+                if(respuesta["isOK"] as! Bool == true){
+                    Session.user?.total = respuesta["importe"] as! Double
                     completionHandler()
                 }else{
                     errorHandler()

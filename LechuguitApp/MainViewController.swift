@@ -25,6 +25,11 @@ class MainViewController: UIViewController {
     @IBAction func btnComida(_ sender: Any) {
        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        lblTotal.text = ((Session.user?.total)?.description)! + "0 €"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
