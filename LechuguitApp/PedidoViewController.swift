@@ -23,7 +23,14 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //self.tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        pedidoAmostrar = Session.pedidoComida
+        if(Session.pedidoComida.count > 0){
+            pedidoAmostrar = Session.pedidoComida
+        }else{
+            pedidoAmostrar = Session.pedidoBebida
+            segmentControl.selectedSegmentIndex = 1
+
+        }
+        
         lblPrecio.text = Session.pedidoPrice.description + " €"
         
         tableView.layer.masksToBounds = true
@@ -81,12 +88,49 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
         PedidoNetwork.sharedInstance.savePedido(pedidoJSON: json, completionHandler: { 
             print("Exito")
             self.activityIndicator?.stopAnimating()
-        }) { 
+            self.showAlert(exito: true)
+            
+        }) {
             print("Fallo")
+            self.activityIndicator?.stopAnimating()
+            self.showAlert(exito: false)
         }
     }
     
+    func showAlert(exito: Bool){
+        
+        let alert: UIAlertController
+        if(exito) {
+            alert = UIAlertController(title: Constants.cadenas.PEDIDO_OK_TITLE, message: Constants.cadenas.PEDIDO_OK_SUB, preferredStyle: .alert)
+            let goMain = UIAlertAction(title: "Ir a la pantalla principal", style: .default, handler: { (action) in
+                self.goMainView()
+            })
+            alert.addAction(goMain)
+            
+            
+        } else {
+            alert = UIAlertController(title: Constants.cadenas.PEDIDO_ERROR, message: Constants.cadenas.MSG_REINTENTAR, preferredStyle: .alert)
+            let reint = UIAlertAction(title: "Reintentar", style: .default, handler: nil)
+            alert.addAction(reint)
+        }
+        self.present(alert, animated: true, completion: nil)
     }
+    
+    func goMainView(){
+        let mainController = navigationController?.viewControllers[0]
+        Session.productCount = 0
+        Session.pedidoComida = [ProductoPedido]()
+        Session.pedidoBebida = [ProductoPedido]()
+        Session.pedido = [ProductoPedido]()
+        Session.countBadge.badgeString = ""
+        
+        Session.FLAG_BEBIDA = 0
+        Session.FLAG_COMIDA = 0
+        self.navigationController?.popToViewController(mainController!, animated: true)
+
+    }
+    
+}
 
 class PedidoViewCell: UITableViewCell {
     
