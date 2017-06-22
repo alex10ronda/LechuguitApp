@@ -15,7 +15,7 @@ struct Constants {
     
     struct endPoints {
         
-        static let url = "http://192.168.1.38:8080/LechuSpring"
+        static let url = "http://192.168.1.37:8080/LechuSpring"
         static let urlFindEstados = "/estado/get"
         static let urlFindAllFood = "/producto/findAllFood"
         static let urlSaveUser = "/cliente/add"
@@ -33,6 +33,10 @@ struct Constants {
         static let PEDIDO_OK_TITLE = "Se ha relizado su pedido correctamente"
         static let PEDIDO_OK_SUB = "Cuando esté listo le llamarán por su nombre"
         static let PEDIDO_ERROR = "No se pudo realizar el pedido"
+        static let AVISO = "Aviso"
+        static let IR_COMIDA = "Ir a Tapas"
+        static let IR_BEBIDA = "Ir a Bebidas"
+        static let PEDIR = "Pedir"
         
     }
     

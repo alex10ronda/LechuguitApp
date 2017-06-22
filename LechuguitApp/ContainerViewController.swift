@@ -31,7 +31,6 @@ class ContainerViewController: UIViewController {
         
         centerViewController = UIStoryboard.centerViewController()
         centerViewController.delegate = self
-        //currentController = centerViewController
         
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
         view.addSubview(centerNavigationController.view)
@@ -40,7 +39,6 @@ class ContainerViewController: UIViewController {
         centerNavigationController.didMove(toParentViewController: self)
         
         Session.countBadge.setImage(UIImage(named: "ic_plane"), for: UIControlState.normal)
-        
         Session.countBadge.badgeString = Utils.getStringCount()
         Session.countBadge.badgeEdgeInsets=UIEdgeInsets.init(top:12, left: 0, bottom: 0, right: 10)
         Session.countBadge.addTarget(self, action: #selector(moveToPedido(sender:)), for: .touchUpInside)
@@ -48,16 +46,14 @@ class ContainerViewController: UIViewController {
     }
     
     func moveToPedido(sender: UIBarButtonItem){
-        print(Session.pedido)
-        
         
         if(Session.FLAG_BEBIDA == 0 && Session.FLAG_COMIDA == 1){
-            let alert = UIAlertController(title: "Aviso", message: Constants.cadenas.MSG_PEDIR_BEBIDA, preferredStyle: .alert)
+            let alert = UIAlertController(title: Constants.cadenas.AVISO, message: Constants.cadenas.MSG_PEDIR_BEBIDA, preferredStyle: .alert)
             
-            let bebidas = UIAlertAction(title: "Ir a Bebidas", style: .default, handler: { (action) in
+            let bebidas = UIAlertAction(title: Constants.cadenas.IR_BEBIDA, style: .default, handler: { (action) in
                 self.centerViewController.optionSelected(position: 2)
             })
-            let cancelar = UIAlertAction(title: "Pedir", style: .cancel, handler: {(action) in
+            let cancelar = UIAlertAction(title: Constants.cadenas.PEDIR, style: .cancel, handler: {(action) in
                 self.showPedidoController()
             })
             alert.addAction(bebidas)
@@ -69,15 +65,15 @@ class ContainerViewController: UIViewController {
             })
             
         } else if(Session.FLAG_COMIDA == 0 && Session.FLAG_BEBIDA == 1){
-            let alert = UIAlertController(title: "Aviso", message: Constants.cadenas.MSG_PEDIR_COMIDA, preferredStyle: .alert)
+            let alert = UIAlertController(title: Constants.cadenas.AVISO, message: Constants.cadenas.MSG_PEDIR_COMIDA, preferredStyle: .alert)
             
-            let bebidas = UIAlertAction(title: "Ir a Tapas", style: .default, handler: { (action) in
+            let tapas = UIAlertAction(title: Constants.cadenas.IR_COMIDA, style: .default, handler: { (action) in
                 self.centerViewController.optionSelected(position: 1)
             })
-            let cancelar = UIAlertAction(title: "Pedir", style: .cancel, handler: {(action) in
+            let cancelar = UIAlertAction(title: Constants.cadenas.PEDIR, style: .cancel, handler: {(action) in
                 self.showPedidoController()
             })
-            alert.addAction(bebidas)
+            alert.addAction(tapas)
             alert.addAction(cancelar)
             present(alert, animated: true, completion: {
                 alert.view.superview?.isUserInteractionEnabled = true
@@ -99,22 +95,11 @@ class ContainerViewController: UIViewController {
         let pedidoController = UIStoryboard.mainStoryboard().instantiateViewController(withIdentifier: "PedidoViewController") as! PedidoViewController
         self.centerNavigationController.pushViewController(pedidoController, animated: true)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -145,6 +130,10 @@ extension UIStoryboard {
     class func bebidaViewController() -> BebidaTableViewController {
         return mainStoryboard().instantiateViewController(withIdentifier: "BebidaViewController") as!
         BebidaTableViewController
+    }
+    
+    class func misPedidosViewController() -> MisPedidosTableViewController {
+        return mainStoryboard().instantiateViewController(withIdentifier: "MisPedidosVC") as! MisPedidosTableViewController
     }
 }
 

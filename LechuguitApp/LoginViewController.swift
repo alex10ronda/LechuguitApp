@@ -28,12 +28,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.view.addSubview(loginButton)
         self.view.addSubview(activityIndicator!)
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
@@ -56,7 +55,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 let pictureUrl = picture.value(forKey: "url") as! String
                 
-                
                 Session.user = User(name: name, lastName: lastName, picture: pictureUrl, idUser: id)
                 try? Session.profileImg = UIImage(data: NSData(contentsOf: NSURL(string: pictureUrl) as! URL) as Data)
                 
@@ -67,10 +65,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
                     self.present(alert, animated: true, completion: nil)
                 })
-                
-                
-                
-                
+ 
             }
             self.activityIndicator?.stopAnimating()
         }
@@ -89,15 +84,5 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.view.window?.makeKeyAndVisible()
 
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

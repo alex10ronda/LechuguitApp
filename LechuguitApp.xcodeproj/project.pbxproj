@@ -12,6 +12,7 @@
 		4E66DE7B1EE065E000C78F38 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E66DE721EE065CE00C78F38 /* Alamofire.framework */; };
 		4E66DE7C1EE065E000C78F38 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E66DE721EE065CE00C78F38 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4E66DE801EE0736F00C78F38 /* PedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */; };
+		4EBE524A1EFBCDF300B01888 /* MisPedidosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE52491EFBCDF300B01888 /* MisPedidosTableViewController.swift */; };
 		751A6D051EDC7CC50040A8C5 /* ProductoPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A6D041EDC7CC50040A8C5 /* ProductoPedido.swift */; };
 		751A6D0E1EDC81D80040A8C5 /* UserNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A6D0D1EDC81D80040A8C5 /* UserNetwork.swift */; };
 		7562DE241ECC6D500017968C /* PedidoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562DE231ECC6D500017968C /* PedidoNetwork.swift */; };
@@ -105,6 +106,7 @@
 /* Begin PBXFileReference section */
 		4E66DE671EE065CE00C78F38 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../../MiApp/MiApp/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidoViewController.swift; sourceTree = "<group>"; };
+		4EBE52491EFBCDF300B01888 /* MisPedidosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisPedidosTableViewController.swift; sourceTree = "<group>"; };
 		751A6D041EDC7CC50040A8C5 /* ProductoPedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductoPedido.swift; sourceTree = "<group>"; };
 		751A6D0D1EDC81D80040A8C5 /* UserNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
 		7562DE231ECC6D500017968C /* PedidoNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidoNetwork.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				7567963F1ECDE98C002F57B1 /* ComidaTableViewController.swift */,
 				757513DD1ECF1C9D00783DC8 /* BebidaTableViewController.swift */,
 				4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */,
+				4EBE52491EFBCDF300B01888 /* MisPedidosTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				756B17241EB0B77700BBB3EF /* SideMenuViewController.swift in Sources */,
 				7578B27B1EB351890074255D /* Session.swift in Sources */,
 				756796481ECDEEF0002F57B1 /* Producto.swift in Sources */,
+				4EBE524A1EFBCDF300B01888 /* MisPedidosTableViewController.swift in Sources */,
 				757513D51ECEF43400783DC8 /* ProductoPresenter.swift in Sources */,
 				756B170D1EB0B71E00BBB3EF /* AppDelegate.swift in Sources */,
 				7578B2791EB34D640074255D /* User.swift in Sources */,

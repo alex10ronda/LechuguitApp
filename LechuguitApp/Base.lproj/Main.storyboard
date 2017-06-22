@@ -243,6 +243,54 @@
             </objects>
             <point key="canvasLocation" x="1525.5999999999999" y="123.68815592203899"/>
         </scene>
+        <!--Mis Pedidos-->
+        <scene sceneID="ZYc-oU-qtx">
+            <objects>
+                <tableViewController storyboardIdentifier="MisPedidosVC" id="dnf-Vk-Hey" customClass="MisPedidosTableViewController" customModule="LechuguitApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wE6-qv-eXN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MisPedidosCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MisPedidosCell" id="JVw-eD-nux" customClass="MiPedidoViewCell" customModule="LechuguitApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JVw-eD-nux" id="Df2-U9-YQG">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-0d-eJ9">
+                                            <rect key="frame" x="56" y="14" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pedidoLbl" destination="hRM-0d-eJ9" id="8dh-K8-o5Z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dnf-Vk-Hey" id="fst-tk-0mA"/>
+                            <outlet property="delegate" destination="dnf-Vk-Hey" id="KQM-eF-PPm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mis Pedidos" id="AJP-mv-Yb1">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="aSq-hy-u4O">
+                            <connections>
+                                <action selector="btnMenuClicked:" destination="dnf-Vk-Hey" id="T6s-k1-579"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsE-S1-kyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2274" y="135"/>
+        </scene>
         <!--Mi Pedido-->
         <scene sceneID="I3k-aR-h6A">
             <objects>

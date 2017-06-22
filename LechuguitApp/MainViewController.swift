@@ -115,7 +115,11 @@ extension MainViewController: SideMenuViewControllerDelegate{
                 redirectToBebidas()
             }
             
-            
+        case 3:
+            print("Mis Pedidos")
+            self.delegate?.collapsePanel!()
+            self.activityIndicator?.startAnimating()
+            redirectToMisPedidos()
             
             
         case 4:
@@ -130,6 +134,13 @@ extension MainViewController: SideMenuViewControllerDelegate{
             print("Default")
         }
         
+    }
+    
+    func redirectToMisPedidos(){
+        let misPedidosController = UIStoryboard.misPedidosViewController()
+        misPedidosController.delegate = self.delegate
+        self.navigationController?.pushViewController(misPedidosController, animated: true)
+        self.activityIndicator?.stopAnimating()
     }
     
     func redirectToTapas(){
