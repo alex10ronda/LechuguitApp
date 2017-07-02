@@ -110,4 +110,5 @@ class MisPedidosTableViewController: UITableViewController {
 class MiPedidoViewCell: UITableViewCell {
     
     @IBOutlet weak var pedidoLbl: UILabel!
+    
 }

@@ -36,6 +36,20 @@ class ProductoPedido{
         }
         return pedido
     }
+    
+    static func pedidoToJSON(productos: [ProductoPedido]) -> [Dictionary<String, Int>] {
+        
+        var pedido = [Dictionary<String, Int>]()
+        var componente = Dictionary<String, Int>()
+        
+        for producto in productos{
+            componente.updateValue(producto.producto.idProducto, forKey: "id")
+            componente.updateValue(producto.cantidad , forKey: "cant")
+            pedido.append(componente)
+        }
+        
+        return pedido
+    }
 
     
    

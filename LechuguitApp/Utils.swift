@@ -46,6 +46,14 @@ struct Utils {
         }
     }
     
+    static func getPedidoPrice() -> Double {
+        var price = 0.0
+        for producto in Session.pedido {
+            price = price + producto.producto.precio * Double(producto.cantidad)
+        }
+        return price
+    }
+    
   
     
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var lblPrecio: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -28,7 +28,6 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }else{
             pedidoAmostrar = Session.pedidoBebida
             segmentControl.selectedSegmentIndex = 1
-
         }
         
         lblPrecio.text = Session.pedidoPrice.description + " €"
@@ -64,10 +63,46 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PedidoCell") as! PedidoViewCell
         cell.nombreProducto.text = (pedidoAmostrar[indexPath.row].producto ).nombreProducto
-        cell.cant.text = (pedidoAmostrar[indexPath.row].cantidad).description
+        cell.productCant.text = (pedidoAmostrar[indexPath.row].cantidad).description
+        cell.productCant.delegate = self
         
         return cell
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let cell = textField.superview?.superview as! PedidoViewCell
+        let arrayIndex = Session.pedido.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+        let newCant = Int(textField.text!)
+        if(segmentControl.selectedSegmentIndex == 0) {
+             let arrayIndexComida = Session.pedidoComida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+            if(newCant == 0){
+                Session.pedido.remove(at: arrayIndex!)
+                Session.pedidoComida.remove(at: arrayIndexComida!)
+            }else{
+                Session.pedido[arrayIndex!].cantidad = newCant!
+                Session.pedidoComida[arrayIndexComida!].cantidad = newCant!
+            }
+        }else{
+            let arrayIndexBebida = Session.pedidoBebida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+            if(newCant == 0){
+                Session.pedido.remove(at: arrayIndex!)
+                Session.pedidoComida.remove(at: arrayIndexBebida!)
+            }else{
+                Session.pedido[arrayIndex!].cantidad = newCant!
+                Session.pedidoComida[arrayIndexBebida!].cantidad = newCant!
+            }
+        }
+        
+               
+        //Recalcula el importe del pedido
+        Session.pedidoPrice = Utils.getPedidoPrice()
+        self.lblPrecio.text = Session.pedidoPrice.description + " €"
+        
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
     
     @IBAction func segmentSelected(_ sender: Any) {
         
@@ -84,7 +119,8 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.activityIndicator?.startAnimating()
         
-        let json = ProductoPedido.pedidoToJSON(comidas: Session.pedidoComida , bebidas: Session.pedidoBebida)
+        //let json = ProductoPedido.pedidoToJSON(comidas: Session.pedidoComida , bebidas: Session.pedidoBebida)
+        let json = ProductoPedido.pedidoToJSON(productos: Session.pedido)
         PedidoNetwork.sharedInstance.savePedido(pedidoJSON: json, completionHandler: { 
             print("Exito")
             self.activityIndicator?.stopAnimating()
@@ -130,12 +166,35 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            self.pedidoAmostrar.remove(at: indexPath.row)
+            let cell = tableView.cellForRow(at: indexPath) as! PedidoViewCell
+            let arrayIndex = Session.pedido.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+            Session.pedido.remove(at: arrayIndex!)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            
+            if(segmentControl.selectedSegmentIndex == 0) {
+                let arrayIndex = Session.pedidoComida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+                Session.pedidoComida.remove(at: arrayIndex!)
+            }else{
+                let arrayIndex = Session.pedidoBebida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+                Session.pedidoBebida.remove(at: arrayIndex!)
+            }
+            
+            //Recalcula el importe del pedido
+            Session.pedidoPrice = Utils.getPedidoPrice()
+            self.lblPrecio.text = Session.pedidoPrice.description + " €"
+        }
+    }
+    
 }
 
 class PedidoViewCell: UITableViewCell {
     
     @IBOutlet weak var nombreProducto: UILabel!
-    @IBOutlet weak var cant: UILabel!
+    @IBOutlet weak var productCant: UITextField!
+    
     
     
 }
