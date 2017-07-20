@@ -38,10 +38,10 @@ class StepperAlertViewController: UIAlertController {
             Session.pedido.append(ProductoPedido.init(producto: self.producto!, cant: Int(stepper.value)))
             if(self.isComida)! {
                 Session.FLAG_COMIDA = 1
-                Session.pedidoComida.append(ProductoPedido.init(producto:self.producto!, cant: Int(stepper.value)))
+                //Session.pedidoComida.append(ProductoPedido.init(producto:self.producto!, cant: Int(stepper.value)))
             }else{
                 Session.FLAG_BEBIDA = 1
-                Session.pedidoBebida.append(ProductoPedido.init(producto:self.producto!, cant: Int(stepper.value)))
+                //Session.pedidoBebida.append(ProductoPedido.init(producto:self.producto!, cant: Int(stepper.value)))
             }
             
             Session.pedidoPrice = Session.pedidoPrice + (stepper.value * (self.producto?.precio)!)

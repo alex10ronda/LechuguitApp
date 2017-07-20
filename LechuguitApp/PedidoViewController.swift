@@ -18,15 +18,21 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var pedidoAmostrar = [ProductoPedido]()
     
+    var pedidoComida = [ProductoPedido]()
+    var pedidoBebida = [ProductoPedido]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView = UITableView()
+        
+        pedidoComida = ProductoPedido.getPedidoComida()
+        pedidoBebida = ProductoPedido.getPedidoBebida()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        if(Session.pedidoComida.count > 0){
-            pedidoAmostrar = Session.pedidoComida
+        if(pedidoComida.count > 0){
+            pedidoAmostrar = pedidoComida
         }else{
-            pedidoAmostrar = Session.pedidoBebida
+            pedidoAmostrar = pedidoBebida
             segmentControl.selectedSegmentIndex = 1
         }
         
@@ -74,22 +80,22 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let arrayIndex = Session.pedido.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
         let newCant = Int(textField.text!)
         if(segmentControl.selectedSegmentIndex == 0) {
-             let arrayIndexComida = Session.pedidoComida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+             let arrayIndexComida = pedidoComida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
             if(newCant == 0){
                 Session.pedido.remove(at: arrayIndex!)
-                Session.pedidoComida.remove(at: arrayIndexComida!)
+                pedidoComida.remove(at: arrayIndexComida!)
             }else{
                 Session.pedido[arrayIndex!].cantidad = newCant!
-                Session.pedidoComida[arrayIndexComida!].cantidad = newCant!
+                pedidoComida[arrayIndexComida!].cantidad = newCant!
             }
         }else{
-            let arrayIndexBebida = Session.pedidoBebida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+            let arrayIndexBebida = pedidoBebida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
             if(newCant == 0){
                 Session.pedido.remove(at: arrayIndex!)
-                Session.pedidoComida.remove(at: arrayIndexBebida!)
+                pedidoBebida.remove(at: arrayIndexBebida!)
             }else{
                 Session.pedido[arrayIndex!].cantidad = newCant!
-                Session.pedidoComida[arrayIndexBebida!].cantidad = newCant!
+                pedidoBebida[arrayIndexBebida!].cantidad = newCant!
             }
         }
         
@@ -107,10 +113,10 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func segmentSelected(_ sender: Any) {
         
         if(segmentControl.selectedSegmentIndex == 0){
-            pedidoAmostrar = Session.pedidoComida
+            pedidoAmostrar = pedidoComida
             self.tableView.reloadData()
         }else if(segmentControl.selectedSegmentIndex == 1){
-            self.pedidoAmostrar = Session.pedidoBebida
+            self.pedidoAmostrar = pedidoBebida
             self.tableView.reloadData()
         }
     }
@@ -155,8 +161,8 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func goMainView(){
         let mainController = navigationController?.viewControllers[0]
         Session.productCount = 0
-        Session.pedidoComida = [ProductoPedido]()
-        Session.pedidoBebida = [ProductoPedido]()
+        //Session.pedidoComida = [ProductoPedido]()
+        //Session.pedidoBebida = [ProductoPedido]()
         Session.pedido = [ProductoPedido]()
         Session.countBadge.badgeString = ""
         
@@ -175,11 +181,11 @@ class PedidoViewController: UIViewController, UITableViewDelegate, UITableViewDa
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
             
             if(segmentControl.selectedSegmentIndex == 0) {
-                let arrayIndex = Session.pedidoComida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
-                Session.pedidoComida.remove(at: arrayIndex!)
+                let arrayIndex = pedidoComida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+                pedidoComida.remove(at: arrayIndex!)
             }else{
-                let arrayIndex = Session.pedidoBebida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
-                Session.pedidoBebida.remove(at: arrayIndex!)
+                let arrayIndex = pedidoBebida.index(where: {$0.producto.nombreProducto == cell.nombreProducto.text})
+                pedidoBebida.remove(at: arrayIndex!)
             }
             
             //Recalcula el importe del pedido

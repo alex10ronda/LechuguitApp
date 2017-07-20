@@ -50,6 +50,29 @@ class ProductoPedido{
         
         return pedido
     }
+    
+    static func getPedidoComida() -> [ProductoPedido] {
+        var comida = [ProductoPedido]()
+        
+        for p in Session.pedido {
+            if(p.producto.tipo == Constants.TP_COMIDA){
+                comida.append(p)
+            }
+        }
+        return comida
+    }
+    
+    
+    static func getPedidoBebida() -> [ProductoPedido] {
+        var bebida = [ProductoPedido]()
+        
+        for p in Session.pedido {
+            if(p.producto.tipo == Constants.TP_BEBIDA){
+                bebida.append(p)
+            }
+        }
+        return bebida
+    }
 
     
    

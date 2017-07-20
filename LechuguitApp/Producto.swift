@@ -15,13 +15,15 @@ class Producto:NSObject {
     var nombreProducto: String
     var imgProducto: String?
     var precio: Double
+    var tipo: String
     
-    init(idProducto: Int, nombreProducto: String, imgProducto:String?, precio:Double) {
+    init(idProducto: Int, nombreProducto: String, imgProducto:String?, precio:Double, tipo: String) {
         
         self.idProducto = idProducto
         self.nombreProducto = nombreProducto
         self.imgProducto = imgProducto
         self.precio = precio
+        self.tipo = tipo
     }
     
     static func getProductFromJson(element: NSDictionary) -> Producto{
@@ -29,8 +31,9 @@ class Producto:NSObject {
         let precio = element.value(forKey: "precio") as! Double
         let id = element.value(forKey: "id") as! Int
         let img = element.value(forKey: "img") as? String
+        let tipo = element.value(forKey: "tpProducto") as! String
         
-        let producto = Producto(idProducto: id, nombreProducto: nombre, imgProducto: img, precio: precio)
+        let producto = Producto(idProducto: id, nombreProducto: nombre, imgProducto: img, precio: precio, tipo: tipo)
         
         return producto
     }
