@@ -136,6 +136,8 @@ class ProductoCell: UITableViewCell{
             if let decodedData = Data(base64Encoded: producto.imgProducto!, options: .ignoreUnknownCharacters) {
                 productImg.image = UIImage(data: decodedData)
             }
+        }else{
+            productImg.image = UIImage(named: "noImg")
         }
         
         productName.text = producto.nombreProducto
