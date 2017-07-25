@@ -125,7 +125,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_beer" translatesAutoresizingMaskIntoConstraints="NO" id="WMj-Pe-7v7">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImg" translatesAutoresizingMaskIntoConstraints="NO" id="WMj-Pe-7v7">
                                             <rect key="frame" x="28" y="8" width="63.5" height="63.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="WMj-Pe-7v7" secondAttribute="height" multiplier="1:1" id="AaH-g5-Lg6"/>
@@ -578,8 +578,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_beer" width="25" height="31"/>
         <image name="ic_carta" width="99" height="234"/>
         <image name="ic_menu" width="28" height="28"/>
+        <image name="noImg" width="170" height="127"/>
     </resources>
 </document>

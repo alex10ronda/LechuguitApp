@@ -129,7 +129,10 @@ class ProductoCell: UITableViewCell{
     
     func configureCell(producto:Producto){
         if(producto.imgProducto != nil){
-            productImg.image = UIImage(named: producto.imgProducto!)
+            if let decodedData = Data(base64Encoded: producto.imgProducto!, options: .ignoreUnknownCharacters) {
+                productImg.image = UIImage(data: decodedData)
+            }
+            //productImg.image = UIImage(Data(base64Encoded: producto.imgProducto!, options: .ign))
         }
         
         productName.text = producto.nombreProducto

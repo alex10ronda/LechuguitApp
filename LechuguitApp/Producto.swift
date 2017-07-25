@@ -30,7 +30,7 @@ class Producto:NSObject {
         let nombre = element.value(forKey: "nombre") as! String
         let precio = element.value(forKey: "precio") as! Double
         let id = element.value(forKey: "id") as! Int
-        let img = element.value(forKey: "img") as? String
+        let img = element.value(forKey: "imagen") as? String
         let tipo = element.value(forKey: "tpProducto") as! String
         
         let producto = Producto(idProducto: id, nombreProducto: nombre, imgProducto: img, precio: precio, tipo: tipo)
