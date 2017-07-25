@@ -116,23 +116,26 @@ class ComidaTableViewController: UITableViewController {
     
     
     // MARK: - Navigation
-    
+    //Botón para mostrar el menú lateral
     @IBAction func btnMenuClicked(_ sender: Any) {
          delegate?.togglePanel!()
     }
 }
 
+//Clase Celda Producto
 class ProductoCell: UITableViewCell{
     
     @IBOutlet weak var productImg: UIImageView!
     @IBOutlet weak var productName: UILabel!
     
+    
+    //Configura la celda de comida...
+    //Setea el nombre y decodifica la imagen de base64
     func configureCell(producto:Producto){
         if(producto.imgProducto != nil){
             if let decodedData = Data(base64Encoded: producto.imgProducto!, options: .ignoreUnknownCharacters) {
                 productImg.image = UIImage(data: decodedData)
             }
-            //productImg.image = UIImage(Data(base64Encoded: producto.imgProducto!, options: .ign))
         }
         
         productName.text = producto.nombreProducto
