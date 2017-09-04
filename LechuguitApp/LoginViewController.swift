@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 let dictionaryResult = result as! NSDictionary
                 
-                
+                //Obtiene los datos
                 let name = dictionaryResult.value(forKey: "first_name") as! String
                 let lastName = dictionaryResult.value(forKey: "last_name") as! String
                 let id = dictionaryResult.value(forKey: "id") as! String
@@ -55,15 +55,27 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 let pictureUrl = picture.value(forKey: "url") as! String
                 
+                //Guarda en sesion los datos como un objeto Usuario
                 Session.user = User(name: name, lastName: lastName, picture: pictureUrl, idUser: id)
+                //Guarda en sesion la imagen
                 try? Session.profileImg = UIImage(data: NSData(contentsOf: NSURL(string: pictureUrl) as! URL) as Data)
                 
+                //Guarda o Actualiza en la BBDD el usuario obtenido (en función si el ID existe o no)
                 UserNetwork.sharedInstance.saveOrUpdate(user: Session.user!, completionHandler: { () in
+                    
+                    //Redirige al contenedor principal si hay exito
                      self.redirectToMain()
+                    
                 }, errorHandler: { () in
+                    //En caso de error, mostrar alerta
                     let alert = UIAlertController(title: Constants.cadenas.MSG_ERROR, message: Constants.cadenas.MSG_REINTENTAR, preferredStyle: .alert)
                     let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+                    alert.addAction(aceptar)
                     self.present(alert, animated: true, completion: nil)
+                    
+                    //Se desloguea al usuario
+                    let loginManager = FBSDKLoginManager()
+                    loginManager.logOut()
                 })
  
             }
@@ -71,12 +83,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+    //Función para el botón logout
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
     }
     
     
+    //Muestra la pantalla con el contenedor principal
     func redirectToMain(){
     
         let containterViewController = ContainerViewController()

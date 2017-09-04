@@ -16,10 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    //Es la primera función en la que se entra en la App
+    //Comprueba si hay una sesión de Facebook abierta: en ese caso establece como pantalla principal el
+    //  contenedor y carga en sesión los datos guardados en el Preferences, si no entrará por la pantalla de Login que es el punto de entrada en el Storyboard de
+    //  la aplicación
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+    
         if(FBSDKAccessToken.current() != nil){
             print("Sesion iniciada")
             window = UIWindow(frame: UIScreen.main.bounds)
@@ -36,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    //Permite hacer Login con Facebook
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         
         let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)

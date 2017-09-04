@@ -16,7 +16,7 @@ class ProductNetwork: NSObject {
     
     func getAllProducts(completionHandler: @escaping ([Producto], [Producto], [Producto]) -> Void, errorHandler: @escaping (Void) -> Void) {
         
-        Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlFindAllFood).responseJSON { response in
+        Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlFindFoodByCarta).responseJSON { response in
             
             if(response.result.isSuccess){
                 
