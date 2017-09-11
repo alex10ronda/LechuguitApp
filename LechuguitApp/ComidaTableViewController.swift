@@ -88,6 +88,16 @@ class ComidaTableViewController: UITableViewController {
         
         let more = UITableViewRowAction(style: .default, title: "Detalle") { (action, indexPath) in
             
+            let detalleProducto = UIStoryboard.detalleProductoViewController()
+            if(indexPath.section == 0){
+                detalleProducto.producto = self.productoPresenter?.getComida(pos: indexPath.row)
+            }else if(indexPath.section == 1){
+                 detalleProducto.producto = self.productoPresenter?.getComida25(pos: indexPath.row)
+            }else {
+                 detalleProducto.producto = self.productoPresenter?.getComida5(pos: indexPath.row)
+            }
+            self.navigationController?.pushViewController(detalleProducto, animated: true)
+            
         }
         
         more.backgroundColor = UIColor.blue

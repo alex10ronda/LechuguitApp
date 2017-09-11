@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Posibles estados menú lateral
 enum State {
     case collapse
     case expanded
@@ -15,13 +16,17 @@ enum State {
 
 class ContainerViewController: UIViewController {
     
+    //Estado inicial cerrado
     var currentState: State = .collapse
-        
+    
+    
     var centerViewController: MainViewController!
     var centerNavigationController: UINavigationController!
     
+    //Menu lateral
     var leftViewController:SideMenuViewController?
     
+    //Cantidad de desplazamientos
     var centerPanelExpandedOffset: CGFloat = 65
     
     //var currentController: UIViewController? = nil
@@ -29,15 +34,19 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //El centreViewController es un MainViewController y su delegate está implementado aquí, este Delegate se encarga de cerrar y abrir el menú lateral
         centerViewController = UIStoryboard.centerViewController()
         centerViewController.delegate = self
         
+        //Se añade al NavigationController y este a la vista
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
         view.addSubview(centerNavigationController.view)
         addChildViewController(centerNavigationController)
         
         centerNavigationController.didMove(toParentViewController: self)
         
+        //Se inicializa la cuenta de productos que se lleva en la barra de navigacion
+        //Este countBadge está en sesion para ser compartida en todas las pantallas
         Session.countBadge.setImage(UIImage(named: "ic_plane"), for: UIControlState.normal)
         Session.countBadge.badgeString = Utils.getStringCount()
         Session.countBadge.badgeEdgeInsets=UIEdgeInsets.init(top:12, left: 0, bottom: 0, right: 10)
@@ -45,12 +54,17 @@ class ContainerViewController: UIViewController {
         
     }
     
+    //Función que se lanza cuando se pulsa en enviar pedido del NavigationController
     func moveToPedido(sender: UIBarButtonItem){
         
+        //Si se ha seleccionado solo comida, muestra un alert con dos opciones:
+        // 1. Ir al menú de bebidas
+        // 2. Ir a finalizar pedido
         if(Session.FLAG_BEBIDA == 0 && Session.FLAG_COMIDA == 1){
             let alert = UIAlertController(title: Constants.cadenas.AVISO, message: Constants.cadenas.MSG_PEDIR_BEBIDA, preferredStyle: .alert)
             
             let bebidas = UIAlertAction(title: Constants.cadenas.IR_BEBIDA, style: .default, handler: { (action) in
+                //Hace la misma función que si selecciona la opcion bebidas del menú lateral
                 self.centerViewController.optionSelected(position: 2)
             })
             let cancelar = UIAlertAction(title: Constants.cadenas.PEDIR, style: .cancel, handler: {(action) in
@@ -58,12 +72,14 @@ class ContainerViewController: UIViewController {
             })
             alert.addAction(bebidas)
             alert.addAction(cancelar)
+            //Cuando se presenta la alerta se añade el gesto para reconocer cuando se clica fuera... en ese caso se cierra la alerta
             present(alert, animated: true, completion: {
                 alert.view.superview?.isUserInteractionEnabled = true
                 alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertClose(sender:))))
 
             })
             
+            //Si solo se ha seleccionando bebida, hace lo contrario
         } else if(Session.FLAG_COMIDA == 0 && Session.FLAG_BEBIDA == 1){
             let alert = UIAlertController(title: Constants.cadenas.AVISO, message: Constants.cadenas.MSG_PEDIR_COMIDA, preferredStyle: .alert)
             
@@ -80,16 +96,19 @@ class ContainerViewController: UIViewController {
                 alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertClose(sender:))))
             })
             
+            //Si se han seleccionado ambas, se redirige a la pantalla de finalizar pedido
         } else if(Session.FLAG_COMIDA == 1 && Session.FLAG_BEBIDA == 1){
             showPedidoController();
         }
         
     }
     
+    //Función que se lanza cuando se reconoce un click fuera del alert, cierra el propio alert
     func alertClose(sender: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Presenta la pantalla Pedido controller
     func showPedidoController(){
         
         let pedidoController = UIStoryboard.mainStoryboard().instantiateViewController(withIdentifier: "PedidoViewController") as! PedidoViewController
@@ -104,6 +123,7 @@ class ContainerViewController: UIViewController {
 }
 
 
+//Recupera todas las vistas con su controlador del StoryBoard
 extension UIStoryboard {
     
     class func mainStoryboard() -> UIStoryboard{
@@ -135,10 +155,19 @@ extension UIStoryboard {
     class func misPedidosViewController() -> MisPedidosTableViewController {
         return mainStoryboard().instantiateViewController(withIdentifier: "MisPedidosVC") as! MisPedidosTableViewController
     }
+    
+    class func detalleProductoViewController() -> DetalleProductoViewController {
+        return mainStoryboard().instantiateViewController(withIdentifier: "DetalleProducto") as! DetalleProductoViewController
+    }
+
 }
 
+
+//Implementacion del MainControllerDelegate
 extension ContainerViewController: MainControllerDelegate{
     
+    //Función que se llama cuando se hace click en el icono de menú
+    //Si está cerrano lo expande
     func togglePanel(){
         
         let notAlreadyExpanded = (currentState != .expanded)
@@ -149,6 +178,7 @@ extension ContainerViewController: MainControllerDelegate{
     }
     
     
+    //Añade el panel del Menu lateral
     func addPanelViewController(){
         
         if(leftViewController == nil){
@@ -157,6 +187,7 @@ extension ContainerViewController: MainControllerDelegate{
         }
     }
     
+    //Añade el panel y añade el delegate que se encarga de gestionar las funciones del menu, de tipo SideMenuDelegate
     func addChildSidePanelController(sidePanelController: SideMenuViewController){
         
         sidePanelController.delegate = centerViewController
@@ -166,6 +197,7 @@ extension ContainerViewController: MainControllerDelegate{
         sidePanelController.didMove(toParentViewController: self)
     }
     
+    //Se encarga de abrir o cerrar el panel en funcion de lo que deba hacer
     func animatePanel(shouldExpand: Bool){
         if(shouldExpand){
             self.currentState = .expanded
@@ -186,6 +218,7 @@ extension ContainerViewController: MainControllerDelegate{
         }, completion: completion)
     }
     
+    //Cierra el panel, si debe hacerlo, llamando a togglePanel
     func collapsePanel(){
         if(currentState == .expanded){
             togglePanel()

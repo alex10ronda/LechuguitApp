@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E18DFF41F66DD950047E4B5 /* DetalleProductoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E18DFF31F66DD950047E4B5 /* DetalleProductoViewController.swift */; };
 		4E66DE801EE0736F00C78F38 /* PedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */; };
 		4E768C9A1F1D162F0081577A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E768C8D1F1D15E70081577A /* Alamofire.framework */; };
 		4E768C9B1F1D162F0081577A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E768C8D1F1D15E70081577A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -115,6 +116,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E18DFF31F66DD950047E4B5 /* DetalleProductoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleProductoViewController.swift; sourceTree = "<group>"; };
 		4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidoViewController.swift; sourceTree = "<group>"; };
 		4E768C811F1D15E60081577A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		4EBE52491EFBCDF300B01888 /* MisPedidosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisPedidosTableViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				757513DD1ECF1C9D00783DC8 /* BebidaTableViewController.swift */,
 				4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */,
 				4EBE52491EFBCDF300B01888 /* MisPedidosTableViewController.swift */,
+				4E18DFF31F66DD950047E4B5 /* DetalleProductoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E18DFF41F66DD950047E4B5 /* DetalleProductoViewController.swift in Sources */,
 				757513DE1ECF1C9D00783DC8 /* BebidaTableViewController.swift in Sources */,
 				756655BC1EB22E61007419F2 /* LoginViewController.swift in Sources */,
 				756796401ECDE98C002F57B1 /* ComidaTableViewController.swift in Sources */,
