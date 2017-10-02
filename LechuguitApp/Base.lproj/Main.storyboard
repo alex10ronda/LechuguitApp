@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qH5-6K-jGk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qH5-6K-jGk">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -252,23 +252,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MisPedidosCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MisPedidosCell" id="JVw-eD-nux" customClass="MiPedidoViewCell" customModule="LechuguitApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="MisPedidosCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MisPedidosCell" rowHeight="200" id="JVw-eD-nux" customClass="MiPedidoViewCell" customModule="LechuguitApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JVw-eD-nux" id="Df2-U9-YQG">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JVw-eD-nux" id="Df2-U9-YQG">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-0d-eJ9">
-                                            <rect key="frame" x="56" y="14" width="42" height="21"/>
+                                            <rect key="frame" x="230" y="14" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_exit" translatesAutoresizingMaskIntoConstraints="NO" id="nyK-a0-OYD">
+                                            <rect key="frame" x="280" y="9" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cba-N0-oyf">
+                                            <rect key="frame" x="32" y="48" width="235" height="143"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="528650456.01722997">
+                                                <!--2017-10-02 15:20:56 +0000-->
+                                            </date>
+                                        </datePicker>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Cba-N0-oyf" firstAttribute="top" secondItem="Df2-U9-YQG" secondAttribute="topMargin" constant="40" id="ALT-aS-GGw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Cba-N0-oyf" secondAttribute="bottom" id="SVB-hq-FDw"/>
+                                        <constraint firstItem="Cba-N0-oyf" firstAttribute="leading" secondItem="Df2-U9-YQG" secondAttribute="leadingMargin" constant="24" id="fsG-fI-JM7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Cba-N0-oyf" secondAttribute="trailing" constant="45" id="zd6-cG-0rS"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="datePicker" destination="Cba-N0-oyf" id="Zi0-lh-db3"/>
+                                    <outlet property="icDesplegable" destination="nyK-a0-OYD" id="KzL-Ce-oXj"/>
                                     <outlet property="pedidoLbl" destination="hRM-0d-eJ9" id="8dh-K8-o5Z"/>
                                 </connections>
                             </tableViewCell>
@@ -289,7 +307,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsE-S1-kyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2274" y="135"/>
+            <point key="canvasLocation" x="2272.5" y="134.1549295774648"/>
         </scene>
         <!--Mi Pedido-->
         <scene sceneID="I3k-aR-h6A">
@@ -659,6 +677,7 @@
     </scenes>
     <resources>
         <image name="ic_carta" width="99" height="234"/>
+        <image name="ic_exit" width="25" height="25"/>
         <image name="ic_menu" width="28" height="28"/>
         <image name="noImg" width="170" height="127"/>
     </resources>

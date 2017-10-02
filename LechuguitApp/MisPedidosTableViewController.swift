@@ -11,6 +11,7 @@ import UIKit
 class MisPedidosTableViewController: UITableViewController {
 
     var delegate: MainControllerDelegate?
+    var selectedIndexPath: IndexPath?
     
     @IBAction func btnMenuClicked(_ sender: Any) {
         
@@ -18,9 +19,9 @@ class MisPedidosTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -48,67 +49,102 @@ class MisPedidosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MisPedidosCell", for: indexPath) as! MiPedidoViewCell
-
+       
         cell.pedidoLbl.text = "Mi Pedido"
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let previousIndexPath = selectedIndexPath
+        
+        if indexPath == selectedIndexPath {
+            self.selectedIndexPath = nil
+        }else{
+            selectedIndexPath = indexPath as IndexPath?
+        }
+        
+        var indexPaths: Array<IndexPath> = []
+        if let previous = previousIndexPath {
+            indexPaths += [previous]
+        }
+        
+        if let current = selectedIndexPath{
+            indexPaths += [current]
+        }
+        
+        if indexPaths.count > 0 {
+            tableView.reloadRows(at: indexPaths, with: .automatic)
+        }
     
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.frame = CGRect(x: (cell?.frame.origin.x)!, y: (cell?.frame.origin.y)!, width: (cell?.frame.size.width)!, height: 200)
+        
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        (cell as! MiPedidoViewCell).watchFrameChanges()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        (cell as! MiPedidoViewCell).ignoreFrameChanges()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    
+     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        for cell in tableView.visibleCells as! [MiPedidoViewCell] {
+            cell.ignoreFrameChanges()
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath as IndexPath == selectedIndexPath {
+            return MiPedidoViewCell.expandedHeight
+        } else {
+            return MiPedidoViewCell.defaultHeight
+        }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 
 }
 
 class MiPedidoViewCell: UITableViewCell {
     
-    @IBOutlet weak var pedidoLbl: UILabel!
+    var isObserving = false;
     
+    @IBOutlet weak var pedidoLbl: UILabel!
+    @IBOutlet weak var icDesplegable: UIImageView!
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    class var expandedHeight: CGFloat{ get{ return 200 } }
+    class var defaultHeight: CGFloat{ get{ return 44 } }
+    
+    func checkHeight() {
+        datePicker.isHidden = (frame.size.height < MiPedidoViewCell.expandedHeight)
+    }
+    
+    func watchFrameChanges() {
+        /*if !isObserving {
+            addObserver(self, forKeyPath: "frame", options: [NSKeyValueObservingOptions.new,NSKeyValueObservingOptions.initial], context: nil)
+            isObserving = true;
+            
+            }*/
+    }
+    
+    
+    func ignoreFrameChanges() {
+        if isObserving {
+            removeObserver(self, forKeyPath: "frame")
+            isObserving = false;
+        }
+    }
+    
+    func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
+        if keyPath == "frame" {
+            checkHeight()
+        }
+    }
+
 }
