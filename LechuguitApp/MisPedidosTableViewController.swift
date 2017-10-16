@@ -21,12 +21,6 @@ class MisPedidosTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +45,10 @@ class MisPedidosTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MisPedidosCell", for: indexPath) as! MiPedidoViewCell
        
         cell.pedidoLbl.text = "Mi Pedido"
+        cell.tablaDetalle.layer.masksToBounds = true
+        cell.tablaDetalle.layer.borderWidth = 0.5
+        cell.tablaDetalle.layer.cornerRadius = cell.tablaDetalle.frame.height / 16.0
+        cell.tablaDetalle.layer.borderColor = UIColor.blue.cgColor
 
         return cell
     }
@@ -83,6 +81,12 @@ class MisPedidosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         (cell as! MiPedidoViewCell).watchFrameChanges()
+        var celdaSeleccionada = cell as! MiPedidoViewCell
+        if(celdaSeleccionada.frame.height == 200){
+            celdaSeleccionada.icono.image = UIImage(named: "ic_menos")
+        }else{
+            celdaSeleccionada.icono.image = UIImage(named: "ic_mas")
+        }
     }
     
     
@@ -115,14 +119,16 @@ class MiPedidoViewCell: UITableViewCell {
     var isObserving = false;
     
     @IBOutlet weak var pedidoLbl: UILabel!
-    @IBOutlet weak var icDesplegable: UIImageView!
+    @IBOutlet weak var icono: UIImageView!
+    @IBOutlet weak var tablaDetalle: UITableView!
+
+
     
-    @IBOutlet weak var datePicker: UIDatePicker!
-    class var expandedHeight: CGFloat{ get{ return 200 } }
-    class var defaultHeight: CGFloat{ get{ return 44 } }
+    class var expandedHeight: CGFloat{ get{ return 220 } }
+    class var defaultHeight: CGFloat{ get{ return 50 } }
     
     func checkHeight() {
-        datePicker.isHidden = (frame.size.height < MiPedidoViewCell.expandedHeight)
+        tablaDetalle.isHidden = (frame.size.height < MiPedidoViewCell.expandedHeight)
     }
     
     func watchFrameChanges() {
