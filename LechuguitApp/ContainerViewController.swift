@@ -29,8 +29,8 @@ class ContainerViewController: UIViewController {
     //Cantidad de desplazamientos
     var centerPanelExpandedOffset: CGFloat = 65
     
-    //var currentController: UIViewController? = nil
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -196,6 +196,7 @@ extension ContainerViewController: MainControllerDelegate{
         addChildViewController(sidePanelController)
         sidePanelController.didMove(toParentViewController: self)
     }
+    
     
     //Se encarga de abrir o cerrar el panel en funcion de lo que deba hacer
     func animatePanel(shouldExpand: Bool){

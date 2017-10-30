@@ -14,6 +14,7 @@ import UIKit
 struct Utils {
     static func saveDataPreferences(){
         let preferences = UserDefaults.standard
+        //Se guardan en el preferences, los datos de sesión
         preferences.set(Session.user?.name, forKey: "name")
         preferences.set(Session.user?.lastName, forKey: "lastName")
         preferences.set(Session.user?.idUser, forKey: "id")

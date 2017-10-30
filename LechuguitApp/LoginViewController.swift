@@ -35,6 +35,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    
+    //Método que se ejecuta cuando se pulsa en el botón de FB
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
         self.activityIndicator?.startAnimating()

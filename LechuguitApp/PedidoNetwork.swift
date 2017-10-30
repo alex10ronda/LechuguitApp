@@ -34,5 +34,20 @@ class PedidoNetwork: NSObject {
             }
         }
     }
-   
+    
+    func getUltimosPedidos(completionHandler: @escaping (String) -> (), errorHandler: @escaping () -> ()){
+        
+        
+        Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlLastPedidos + (Session.user?.idUser)!).responseJSON{ (response)
+            in
+            
+            if(response.result.isSuccess){
+                //print(response.result.value)
+                let respuesta = String(describing: response.result.value)
+                completionHandler(respuesta)
+            }else{
+                errorHandler()
+            }
+        }
+    }
 }
