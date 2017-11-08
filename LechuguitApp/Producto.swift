@@ -11,11 +11,11 @@ import Foundation
 
 class Producto:NSObject {
     
-    var idProducto: Int
+    var idProducto: Int?
     var nombreProducto: String
     var imgProducto: String?
-    var precio: Double
-    var tipo: String
+    var precio: Double?
+    var tipo: String?
     var descripcion: String?
     
     init(idProducto: Int, nombreProducto: String, imgProducto:String?, precio:Double, tipo: String, descripcion:String?) {
@@ -26,6 +26,10 @@ class Producto:NSObject {
         self.precio = precio
         self.tipo = tipo
         self.descripcion = descripcion
+    }
+    
+    init(nombreProducto: String){
+        self.nombreProducto = nombreProducto
     }
 
     

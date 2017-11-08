@@ -43,6 +43,17 @@ class PedidoNetwork: NSObject {
             
             if(response.result.isSuccess){
                 //print(response.result.value)
+                
+                let respuestaJSON = response.result.value as! NSArray
+                var pedidos = [Pedido]()
+                
+                for elemento in respuestaJSON {
+                    
+                    let elementoJSON = elemento as! NSDictionary
+                    pedidos.append(Pedido.init(elemento: elementoJSON))
+                }
+                
+                
                 let respuesta = String(describing: response.result.value)
                 completionHandler(respuesta)
             }else{

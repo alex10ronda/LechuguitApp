@@ -121,6 +121,6 @@ class BebidaViewCell: UITableViewCell{
         }
         
         productName.text = producto.nombreProducto
-        precio.text = (producto.precio).description + "€"
+        precio.text = ((producto.precio)?.description)! + "€"
     }
 }

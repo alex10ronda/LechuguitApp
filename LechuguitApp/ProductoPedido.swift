@@ -12,10 +12,17 @@ class ProductoPedido{
     
     var producto: Producto
     var cantidad: Int
+    var precio: Double?
     
     init(producto: Producto, cant: Int) {
         self.producto = producto
         self.cantidad = cant
+    }
+    
+    init(producto: Producto, cant: Int, precio: Double) {
+        self.producto = producto
+        self.cantidad = cant
+        self.precio = precio
     }
     
     static func pedidoToJSON(comidas: [ProductoPedido], bebidas: [ProductoPedido]) -> [Dictionary<String, Int>] {
@@ -24,13 +31,13 @@ class ProductoPedido{
         var componente = Dictionary<String, Int>()
         
         for comida in comidas{
-            componente.updateValue(comida.producto.idProducto, forKey: "id")
+            componente.updateValue(comida.producto.idProducto!, forKey: "id")
             componente.updateValue(comida.cantidad , forKey: "cant")
             pedido.append(componente)
         }
         
         for bebida in bebidas {
-            componente.updateValue(bebida.producto.idProducto, forKey: "id")
+            componente.updateValue(bebida.producto.idProducto!, forKey: "id")
             componente.updateValue(bebida.cantidad, forKey: "cant")
             pedido.append(componente)
         }
@@ -43,7 +50,7 @@ class ProductoPedido{
         var componente = Dictionary<String, Int>()
         
         for producto in productos{
-            componente.updateValue(producto.producto.idProducto, forKey: "id")
+            componente.updateValue(producto.producto.idProducto!, forKey: "id")
             componente.updateValue(producto.cantidad , forKey: "cant")
             pedido.append(componente)
         }

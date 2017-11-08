@@ -22,7 +22,7 @@ class DetalleProductoViewController: UIViewController {
         super.viewDidLoad()
         
         lblNombre.text = producto.nombreProducto
-        lblPrecio.text = producto.precio.description + " €"
+        lblPrecio.text = (producto.precio?.description)! + " €"
         lblDescripcion.text = producto.descripcion
         
         if(producto.imgProducto != nil){
