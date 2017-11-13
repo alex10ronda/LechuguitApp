@@ -119,10 +119,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductoCell" id="IGC-gv-hEN" customClass="ProductoCell" customModule="LechuguitApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="56" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGC-gv-hEN" id="y7u-sA-Tv0">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImg" translatesAutoresizingMaskIntoConstraints="NO" id="WMj-Pe-7v7">
@@ -184,7 +184,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mxj-97-psP" id="Egu-dP-YTB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-cy-GBb">
@@ -256,27 +256,27 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="220"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JVw-eD-nux" id="Df2-U9-YQG">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="219.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-0d-eJ9">
-                                            <rect key="frame" x="16" y="14" width="193" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-0d-eJ9">
+                                            <rect key="frame" x="16" y="14" width="190" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5AI-yz-QVX" customClass="TablaDetallePedidoTableView" customModule="LechuguitApp" customModuleProvider="target">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5AI-yz-QVX">
                                             <rect key="frame" x="16" y="58" width="289" height="154"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <inset key="separatorInset" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
                                             <prototypes>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DetallePedidoCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sGT-LP-KvI" customClass="DetallePedidoCell" customModule="LechuguitApp" customModuleProvider="target">
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sGT-LP-KvI">
                                                     <rect key="frame" x="0.0" y="28" width="289" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sGT-LP-KvI" id="UxU-cJ-ykd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="289" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="289" height="43"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHh-C5-Mkw">
@@ -294,7 +294,7 @@
                                                 </tableViewCell>
                                             </prototypes>
                                         </tableView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOk-mC-8oT">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOk-mC-8oT">
                                             <rect key="frame" x="223" y="14" width="51" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -314,12 +314,12 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="5AI-yz-QVX" secondAttribute="trailing" constant="7" id="4Hm-e9-dxv"/>
                                         <constraint firstItem="fOk-mC-8oT" firstAttribute="top" secondItem="Df2-U9-YQG" secondAttribute="topMargin" constant="6" id="Iv0-w4-Lo5"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="toJ-FG-QDz" secondAttribute="trailing" constant="10" id="L2x-Gx-2BO"/>
-                                        <constraint firstItem="hRM-0d-eJ9" firstAttribute="width" secondItem="Df2-U9-YQG" secondAttribute="width" multiplier="0.5" id="Njg-Hq-gws"/>
+                                        <constraint firstItem="hRM-0d-eJ9" firstAttribute="width" secondItem="Df2-U9-YQG" secondAttribute="width" multiplier="0.5" constant="30" id="Njg-Hq-gws"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="5AI-yz-QVX" secondAttribute="bottom" constant="-0.5" id="OdC-2R-Ybc"/>
                                         <constraint firstItem="hRM-0d-eJ9" firstAttribute="leading" secondItem="Df2-U9-YQG" secondAttribute="leadingMargin" constant="8" id="QRB-xw-fOE"/>
                                         <constraint firstItem="toJ-FG-QDz" firstAttribute="leading" secondItem="fOk-mC-8oT" secondAttribute="trailing" constant="8" id="Tcf-9V-utK"/>
                                         <constraint firstItem="5AI-yz-QVX" firstAttribute="leading" secondItem="Df2-U9-YQG" secondAttribute="leadingMargin" constant="8" id="uPN-uy-UOp"/>
-                                        <constraint firstItem="fOk-mC-8oT" firstAttribute="leading" secondItem="hRM-0d-eJ9" secondAttribute="trailing" constant="14" id="wl3-7O-2J5"/>
+                                        <constraint firstItem="fOk-mC-8oT" firstAttribute="leading" secondItem="hRM-0d-eJ9" secondAttribute="trailing" constant="17" id="wl3-7O-2J5"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -378,7 +378,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUk-2E-vbb" id="T85-zF-l62">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOB-RW-BiK">
@@ -657,10 +657,10 @@
                                 <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionCell" rowHeight="60" id="I3N-ch-fcX" customClass="OptionCell" customModule="LechuguitApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I3N-ch-fcX" id="D4g-Cn-nV6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KpN-Ly-OO4">

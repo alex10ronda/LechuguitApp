@@ -51,9 +51,6 @@ class MisPedidosTableViewController: UITableViewController {
         
         
         
-        cell.tablaDetalle.dataSource =
-        cell.tablaDetalle.reloadData()
-        
         cell.tablaDetalle.layer.masksToBounds = true
         cell.tablaDetalle.layer.borderWidth = 0.5
         cell.tablaDetalle.layer.cornerRadius = cell.tablaDetalle.frame.height / 16.0
