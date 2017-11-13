@@ -35,7 +35,7 @@ class PedidoNetwork: NSObject {
         }
     }
     
-    func getUltimosPedidos(completionHandler: @escaping (String) -> (), errorHandler: @escaping () -> ()){
+    func getUltimosPedidos(completionHandler: @escaping ([Pedido]) -> (), errorHandler: @escaping () -> ()){
         
         
         Alamofire.request(Constants.endPoints.url + Constants.endPoints.urlLastPedidos + (Session.user?.idUser)!).responseJSON{ (response)
@@ -53,9 +53,8 @@ class PedidoNetwork: NSObject {
                     pedidos.append(Pedido.init(elemento: elementoJSON))
                 }
                 
-                
-                let respuesta = String(describing: response.result.value)
-                completionHandler(respuesta)
+            
+                completionHandler(pedidos)
             }else{
                 errorHandler()
             }

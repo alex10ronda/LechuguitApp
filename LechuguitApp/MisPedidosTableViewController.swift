@@ -12,6 +12,8 @@ class MisPedidosTableViewController: UITableViewController {
 
     var delegate: MainControllerDelegate?
     var selectedIndexPath: IndexPath?
+    var pedidoPresenter: PedidoPresenter?
+    
     
     @IBAction func btnMenuClicked(_ sender: Any) {
         
@@ -37,14 +39,21 @@ class MisPedidosTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return (pedidoPresenter?.arrayPedidos.count)!
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MisPedidosCell", for: indexPath) as! MiPedidoViewCell
        
-        cell.pedidoLbl.text = "Mi Pedido"
+        cell.pedidoLbl.text = pedidoPresenter?.getPedidoBy(index: indexPath.row).fecha
+        cell.precioLbl.text = (pedidoPresenter?.getPedidoBy(index: indexPath.row).importe.description)! + " €"
+        
+        
+        
+        cell.tablaDetalle.dataSource =
+        cell.tablaDetalle.reloadData()
+        
         cell.tablaDetalle.layer.masksToBounds = true
         cell.tablaDetalle.layer.borderWidth = 0.5
         cell.tablaDetalle.layer.cornerRadius = cell.tablaDetalle.frame.height / 16.0
@@ -81,7 +90,7 @@ class MisPedidosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         (cell as! MiPedidoViewCell).watchFrameChanges()
-        var celdaSeleccionada = cell as! MiPedidoViewCell
+        let celdaSeleccionada = cell as! MiPedidoViewCell
         if(celdaSeleccionada.frame.height == 200){
             celdaSeleccionada.icono.image = UIImage(named: "ic_menos")
         }else{
@@ -121,6 +130,7 @@ class MiPedidoViewCell: UITableViewCell {
     @IBOutlet weak var pedidoLbl: UILabel!
     @IBOutlet weak var icono: UIImageView!
     @IBOutlet weak var tablaDetalle: UITableView!
+    @IBOutlet weak var precioLbl: UILabel!
 
 
     

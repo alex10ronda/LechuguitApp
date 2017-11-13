@@ -147,13 +147,16 @@ extension MainViewController: SideMenuViewControllerDelegate{
             self.delegate?.collapsePanel!()
             self.activityIndicator?.startAnimating()
             
-            PedidoNetwork.sharedInstance.getUltimosPedidos(completionHandler: { (respuesta) in
-                print(respuesta)
-            }, errorHandler: {
+            let pedidoPresenter = PedidoPresenter()
+            
+            pedidoPresenter.getUltimosPedidos(completionHandler: { 
+                self.redirectToMisPedidos(pedidoPresenter: pedidoPresenter)
+            }, errorHandler: { 
                 self.activityIndicator?.stopAnimating()
                 self.showAlert(msg: Constants.cadenas.MSG_ERROR_CONEXION)
             })
-            redirectToMisPedidos()
+            
+           
             
             
         case 4:
@@ -179,10 +182,10 @@ extension MainViewController: SideMenuViewControllerDelegate{
     /**
         Método que se llama para redirigir a la pantalla de Mis Pedidos Recientes
      */
-    func redirectToMisPedidos(){
+    func redirectToMisPedidos(pedidoPresenter: PedidoPresenter){
         
         let misPedidosController = UIStoryboard.misPedidosViewController()
-        
+        misPedidosController.pedidoPresenter = pedidoPresenter
         //Esta nueva pantalla tiene un delegate que se iguala al de esta (Principal) para poder abrir/cerrar el menú lateral
         misPedidosController.delegate = self.delegate
         self.navigationController?.pushViewController(misPedidosController, animated: true)
