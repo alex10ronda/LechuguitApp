@@ -12,6 +12,8 @@
 		4E768C9A1F1D162F0081577A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E768C8D1F1D15E70081577A /* Alamofire.framework */; };
 		4E768C9B1F1D162F0081577A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E768C8D1F1D15E70081577A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4E86294E1FB36F12007DEEDF /* Pedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E86294D1FB36F12007DEEDF /* Pedido.swift */; };
+		4E93CFD81FCC658B006A6E64 /* CabeceraPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E93CFD71FCC658B006A6E64 /* CabeceraPedido.swift */; };
+		4E93CFE11FCC65AF006A6E64 /* CabeceraPedido.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E93CFE01FCC65AF006A6E64 /* CabeceraPedido.xib */; };
 		4EBE524A1EFBCDF300B01888 /* MisPedidosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE52491EFBCDF300B01888 /* MisPedidosTableViewController.swift */; };
 		4EE7D9A91FB9E68100F4FDA9 /* PedidoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7D9A81FB9E68100F4FDA9 /* PedidoPresenter.swift */; };
 		751A6D051EDC7CC50040A8C5 /* ProductoPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A6D041EDC7CC50040A8C5 /* ProductoPedido.swift */; };
@@ -122,6 +124,8 @@
 		4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidoViewController.swift; sourceTree = "<group>"; };
 		4E768C811F1D15E60081577A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		4E86294D1FB36F12007DEEDF /* Pedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
+		4E93CFD71FCC658B006A6E64 /* CabeceraPedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabeceraPedido.swift; sourceTree = "<group>"; };
+		4E93CFE01FCC65AF006A6E64 /* CabeceraPedido.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CabeceraPedido.xib; sourceTree = "<group>"; };
 		4EBE52491EFBCDF300B01888 /* MisPedidosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisPedidosTableViewController.swift; sourceTree = "<group>"; };
 		4EE7D9A81FB9E68100F4FDA9 /* PedidoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidoPresenter.swift; sourceTree = "<group>"; };
 		751A6D041EDC7CC50040A8C5 /* ProductoPedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductoPedido.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 			children = (
 				756B172D1EB0F7DD00BBB3EF /* Presenters */,
 				756B172C1EB0F7CF00BBB3EF /* Controllers */,
+				4E93CFD71FCC658B006A6E64 /* CabeceraPedido.swift */,
+				4E93CFE01FCC65AF006A6E64 /* CabeceraPedido.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 			files = (
 				756B171A1EB0B71E00BBB3EF /* LaunchScreen.storyboard in Resources */,
 				756B17171EB0B71E00BBB3EF /* Assets.xcassets in Resources */,
+				4E93CFE11FCC65AF006A6E64 /* CabeceraPedido.xib in Resources */,
 				756B17121EB0B71E00BBB3EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +443,7 @@
 				757513DE1ECF1C9D00783DC8 /* BebidaTableViewController.swift in Sources */,
 				756655BC1EB22E61007419F2 /* LoginViewController.swift in Sources */,
 				756796401ECDE98C002F57B1 /* ComidaTableViewController.swift in Sources */,
+				4E93CFD81FCC658B006A6E64 /* CabeceraPedido.swift in Sources */,
 				7575146F1ECF3ED100783DC8 /* MIBadgeButton.swift in Sources */,
 				751A6D051EDC7CC50040A8C5 /* ProductoPedido.swift in Sources */,
 				4E66DE801EE0736F00C78F38 /* PedidoViewController.swift in Sources */,

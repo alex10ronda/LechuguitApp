@@ -8,156 +8,79 @@
 
 import UIKit
 
-class MisPedidosTableViewController: UITableViewController {
+class MisPedidosTableViewController: UITableViewController, CaberceraPedidoDelegate {
 
     var delegate: MainControllerDelegate?
-    var selectedIndexPath: IndexPath?
     var pedidoPresenter: PedidoPresenter?
     
     
     @IBAction func btnMenuClicked(_ sender: Any) {
-        
         delegate?.togglePanel!()
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        //Registramos la cabecera de la tabla
+        let nib = UINib(nibName: "CabeceraPedido", bundle: nil)
+        tableView.register(nib, forHeaderFooterViewReuseIdentifier: "CabeceraPedido")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return  (pedidoPresenter?.arrayPedidos.count)!
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return (pedidoPresenter?.arrayPedidos.count)!
+   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return (pedidoPresenter?.arrayPedidos[section].collapsed)! ? 0 : (pedidoPresenter?.arrayPedidos[section].detalle.count)!
     }
-
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CabeceraPedido") as! CabeceraPedido
+        
+        header.lblFecha.text = pedidoPresenter?.getPedidoBy(index: section).fecha
+        header.lblImporte.text = (pedidoPresenter?.getPedidoBy(index: section).importe.description)! + " €"
+        
+        header.section = section
+        header.delegate = self
+        return header
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return (pedidoPresenter?.arrayPedidos[section].fecha)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MisPedidosCell", for: indexPath) as! MiPedidoViewCell
-       
-        cell.pedidoLbl.text = pedidoPresenter?.getPedidoBy(index: indexPath.row).fecha
-        cell.precioLbl.text = (pedidoPresenter?.getPedidoBy(index: indexPath.row).importe.description)! + " €"
-        
-        
-        
-        cell.tablaDetalle.layer.masksToBounds = true
-        cell.tablaDetalle.layer.borderWidth = 0.5
-        cell.tablaDetalle.layer.cornerRadius = cell.tablaDetalle.frame.height / 16.0
-        cell.tablaDetalle.layer.borderColor = UIColor.blue.cgColor
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MisPedidosCell") as! MiPedidoViewCell
+        let producto = (pedidoPresenter?.getPedidoBy(index: indexPath.section).detalle[indexPath.row].producto)! as Producto
+        cell.pedidoLbl.text = producto.nombreProducto
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let previousIndexPath = selectedIndexPath
-        
-        if indexPath == selectedIndexPath {
-            self.selectedIndexPath = nil
-        }else{
-            selectedIndexPath = indexPath as IndexPath?
-        }
-        
-        var indexPaths: Array<IndexPath> = []
-        if let previous = previousIndexPath {
-            indexPaths += [previous]
-        }
-        
-        if let current = selectedIndexPath{
-            indexPaths += [current]
-        }
-        
-        if indexPaths.count > 0 {
-            tableView.reloadRows(at: indexPaths, with: .automatic)
-        }
-    
-        
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
     }
+
+    func toggleSection(header: CabeceraPedido, section: Int){}
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        (cell as! MiPedidoViewCell).watchFrameChanges()
-        let celdaSeleccionada = cell as! MiPedidoViewCell
-        if(celdaSeleccionada.frame.height == 200){
-            celdaSeleccionada.icono.image = UIImage(named: "ic_menos")
-        }else{
-            celdaSeleccionada.icono.image = UIImage(named: "ic_mas")
-        }
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        (cell as! MiPedidoViewCell).ignoreFrameChanges()
-    }
-    
-    
-     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        for cell in tableView.visibleCells as! [MiPedidoViewCell] {
-            cell.ignoreFrameChanges()
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath as IndexPath == selectedIndexPath {
-            return MiPedidoViewCell.expandedHeight
-        } else {
-            return MiPedidoViewCell.defaultHeight
-        }
-    }
-    
+   
     
 
 }
 
 class MiPedidoViewCell: UITableViewCell {
     
-    var isObserving = false;
     
     @IBOutlet weak var pedidoLbl: UILabel!
-    @IBOutlet weak var icono: UIImageView!
-    @IBOutlet weak var tablaDetalle: UITableView!
     @IBOutlet weak var precioLbl: UILabel!
 
 
     
-    class var expandedHeight: CGFloat{ get{ return 220 } }
-    class var defaultHeight: CGFloat{ get{ return 50 } }
-    
-    func checkHeight() {
-        tablaDetalle.isHidden = (frame.size.height < MiPedidoViewCell.expandedHeight)
-    }
-    
-    func watchFrameChanges() {
-        /*if !isObserving {
-            addObserver(self, forKeyPath: "frame", options: [NSKeyValueObservingOptions.new,NSKeyValueObservingOptions.initial], context: nil)
-            isObserving = true;
-            
-            }*/
-    }
-    
-    
-    func ignoreFrameChanges() {
-        if isObserving {
-            removeObserver(self, forKeyPath: "frame")
-            isObserving = false;
-        }
-    }
-    
-    func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
-        if keyPath == "frame" {
-            checkHeight()
-        }
-    }
-
+   
 }

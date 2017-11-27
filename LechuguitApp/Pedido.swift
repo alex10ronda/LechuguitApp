@@ -14,11 +14,15 @@ class Pedido {
     var importe: Double
     var detalle: [ProductoPedido]
     
+    //Para implementar las celdas colapsables
+    var collapsed: Bool
+    
     init(elemento: NSDictionary){
         
         self.fecha = elemento.value(forKey: "fecha") as! String
         self.importe = elemento.value(forKey: "importe") as! Double
         self.detalle = [ProductoPedido]()
+        self.collapsed = true
         
         let detalleArray = elemento.value(forKey: "detalle") as! NSArray
         
