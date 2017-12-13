@@ -30,6 +30,7 @@ class PedidoPresenter {
     }
     
     
+    //Método que devuelve un pedido según en índice
     func getPedidoBy(index: Int) -> Pedido{
         return arrayPedidos[index]
     }

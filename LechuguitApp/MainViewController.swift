@@ -185,7 +185,10 @@ extension MainViewController: SideMenuViewControllerDelegate{
     func redirectToMisPedidos(pedidoPresenter: PedidoPresenter){
         
         let misPedidosController = UIStoryboard.misPedidosViewController()
+        
+        //Se le pasa el pedidoPresenter que contiene los pedidos recibidos
         misPedidosController.pedidoPresenter = pedidoPresenter
+        
         //Esta nueva pantalla tiene un delegate que se iguala al de esta (Principal) para poder abrir/cerrar el menú lateral
         misPedidosController.delegate = self.delegate
         self.navigationController?.pushViewController(misPedidosController, animated: true)
