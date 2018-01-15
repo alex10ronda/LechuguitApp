@@ -12,6 +12,7 @@ class MisPedidosTableViewController: UITableViewController, CaberceraPedidoDeleg
 
     var delegate: MainControllerDelegate?
     var pedidoPresenter: PedidoPresenter?
+    var celdaDesplegada: Int? = nil
     
     
     @IBAction func btnMenuClicked(_ sender: Any) {
@@ -103,13 +104,20 @@ class MisPedidosTableViewController: UITableViewController, CaberceraPedidoDeleg
     //Método del Delegate que cambia el estado de una celda de colapsada a no colapsada y viceversa
     func toggleSection(header: CabeceraPedido, section: Int){
     
+        if(celdaDesplegada != nil && celdaDesplegada != section){
+            pedidoPresenter?.arrayPedidos[celdaDesplegada!].collapsed = true
+        }
+        
         let collapsed = !(pedidoPresenter?.arrayPedidos[section].collapsed)!
         
         pedidoPresenter?.arrayPedidos[section].collapsed = collapsed
         
         header.setCollapsed(collapsed: collapsed)
         
+        tableView.reloadData()
         tableView.reloadSections(NSIndexSet(index:section) as IndexSet, with: .automatic)
+        
+        celdaDesplegada = section
     }
 
 }

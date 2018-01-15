@@ -22,6 +22,9 @@ class Pedido {
         self.fecha = elemento.value(forKey: "fecha") as! String
         self.importe = elemento.value(forKey: "importe") as! Double
         self.detalle = [ProductoPedido]()
+        
+        //Al crear el objeto pedido, se setea esta propiedad como true, porque por defecto la celda está
+        // colapsada
         self.collapsed = true
         
         let detalleArray = elemento.value(forKey: "detalle") as! NSArray
