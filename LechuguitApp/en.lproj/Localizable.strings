@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  LechuguitApp
+
+  Created by Alejandro Ruiz on 12/2/18.
+  Copyright © 2018 bbva. All rights reserved.
+*/
+
+"InicioFacebook" = "Log in with Facebook";
+
+"Aceptar" = "OK";
+"Error" = "Failure has ocurred"
+;

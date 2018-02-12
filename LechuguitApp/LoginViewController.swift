@@ -11,23 +11,31 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-    var loginButton = FBSDKLoginButton()
-    
+    @IBOutlet weak var loginBtn: FBSDKLoginButton!
     var activityIndicator: UIActivityIndicatorView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.center = self.view.center
-        loginButton.readPermissions = ["public_profile", "email"]
-        loginButton.delegate = self
+
+        let buttonText = NSAttributedString(string: NSLocalizedString("InicioFacebook", comment: ""))
+        loginBtn.setAttributedTitle(buttonText, for: .normal)
+        
+        loginBtn.readPermissions = ["public_profile", "email"]
+        loginBtn.delegate = self
         
         activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         activityIndicator?.color = UIColor.black
         activityIndicator?.center = self.view.center
         
-        self.view.addSubview(loginButton)
+        self.view.addSubview(loginBtn)
         self.view.addSubview(activityIndicator!)
 
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.activityIndicator?.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,23 +73,25 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 //Guarda o Actualiza en la BBDD el usuario obtenido (en función si el ID existe o no)
                 UserNetwork.sharedInstance.saveOrUpdate(user: Session.user!, completionHandler: { () in
                     
+                    self.activityIndicator?.stopAnimating()
                     //Redirige al contenedor principal si hay exito
                      self.redirectToMain()
                     
                 }, errorHandler: { () in
                     //En caso de error, mostrar alerta
                     let alert = UIAlertController(title: Constants.cadenas.MSG_ERROR, message: Constants.cadenas.MSG_REINTENTAR, preferredStyle: .alert)
-                    let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+                    let aceptar = UIAlertAction(title: NSLocalizedString("Aceptar", comment: ""), style: .default, handler: nil)
                     alert.addAction(aceptar)
                     self.present(alert, animated: true, completion: nil)
                     
                     //Se desloguea al usuario
                     let loginManager = FBSDKLoginManager()
                     loginManager.logOut()
+                    self.activityIndicator?.stopAnimating()
                 })
  
             }
-            self.activityIndicator?.stopAnimating()
+            
         }
     }
     

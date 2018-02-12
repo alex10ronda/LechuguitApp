@@ -15,7 +15,7 @@ struct Constants {
     
     struct endPoints {
         
-        static let url = "http://192.168.1.35:8080/LechuSpring"
+        static let url = "http://192.168.1.36:8080/LechuSpring"
         static let urlFindEstados = "/estado/get"
         static let urlFindAllFood = "/producto/findAllFood"
         static let urlSaveUser = "/cliente/add"
@@ -27,7 +27,7 @@ struct Constants {
     
     struct cadenas {
         
-        static let MSG_ERROR = "Ha ocurrido un error"
+        static let MSG_ERROR = NSLocalizedString("Error", comment: "")
         static let MSG_REINTENTAR = "Inténtelo de nuevo"
         static let MSG_ERROR_CONEXION = "No se ha podido conectar con el servidor"
         static let MSG_PEDIR_BEBIDA = "No has pedido nada para beber"

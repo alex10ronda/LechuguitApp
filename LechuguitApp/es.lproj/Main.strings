@@ -1,0 +1,100 @@
+
+
+
+
+
+/* Class = "UILabel"; text = "El Lechuguita"; ObjectID = "1Av-My-wbg"; */
+"1Av-My-wbg.text" = "El Lechuguita";
+
+/* Class = "UINavigationItem"; title = "Bebidas"; ObjectID = "1EA-i1-6HP"; */
+"1EA-i1-6HP.title" = "Bebidas";
+
+/* Class = "UILabel"; text = "dasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdads"; ObjectID = "1Xb-oH-dLB"; */
+"1Xb-oH-dLB.text" = "dasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdads";
+
+/* Class = "UILabel"; text = "0.80 €"; ObjectID = "1fx-fB-5SW"; */
+"1fx-fB-5SW.text" = "0.80 €";
+
+/* Class = "UIButton"; normalTitle = "Pedir"; ObjectID = "7qF-X1-V6Q"; */
+"7qF-X1-V6Q.normalTitle" = "Pedir";
+
+/* Class = "UILabel"; text = "0.00€"; ObjectID = "9Gm-RT-Eyr"; */
+"9Gm-RT-Eyr.text" = "0.00€";
+
+/* Class = "UINavigationItem"; title = "Mis Pedidos"; ObjectID = "AJP-mv-Yb1"; */
+"AJP-mv-Yb1.title" = "Mis Pedidos";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "EX2-An-e5H"; */
+"EX2-An-e5H.text" = "Total";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JHH-jn-mHI"; */
+"JHH-jn-mHI.text" = "Label";
+
+/* Class = "UILabel"; text = "El Lechuguita"; ObjectID = "KI7-vY-792"; */
+"KI7-vY-792.text" = "El Lechuguita";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MOB-RW-BiK"; */
+"MOB-RW-BiK.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Mi Pedido"; ObjectID = "Oaf-rp-qtN"; */
+"Oaf-rp-qtN.title" = "Mi Pedido";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QHw-PI-fra"; */
+"QHw-PI-fra.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "V0b-76-pYf"; */
+"V0b-76-pYf.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Comida"; ObjectID = "WS7-Tk-a2O"; */
+"WS7-Tk-a2O.normalTitle" = "Comida";
+
+/* Class = "UILabel"; text = "Nombre"; ObjectID = "YBj-Nd-UTd"; */
+"YBj-Nd-UTd.text" = "Nombre";
+
+/* Class = "UILabel"; text = "Bienvenido a Bar El Lechuguita"; ObjectID = "ZAq-ri-dqD"; */
+"ZAq-ri-dqD.text" = "Bienvenido a Bar El Lechuguita";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fOk-mC-8oT"; */
+"fOk-mC-8oT.text" = "Label";
+
+/* Class = "UILabel"; text = "Bar Casa Moreno"; ObjectID = "fWn-ve-WVH"; */
+"fWn-ve-WVH.text" = "Bar Casa Moreno";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hRM-0d-eJ9"; */
+"hRM-0d-eJ9.text" = "Label";
+
+/* Class = "UILabel"; text = "uds."; ObjectID = "ite-3c-507"; */
+"ite-3c-507.text" = "uds.";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "j0d-eq-4VD"; */
+"j0d-eq-4VD.text" = "Total";
+
+/* Class = "UISegmentedControl"; ksY-Xm-miN.segmentTitles[0] = "Comida"; ObjectID = "ksY-Xm-miN"; */
+"ksY-Xm-miN.segmentTitles[0]" = "Comida";
+
+/* Class = "UISegmentedControl"; ksY-Xm-miN.segmentTitles[1] = "Bebida"; ObjectID = "ksY-Xm-miN"; */
+"ksY-Xm-miN.segmentTitles[1]" = "Bebida";
+
+/* Class = "UINavigationItem"; title = "LechuguitApp"; ObjectID = "mhl-0Z-eFm"; */
+"mhl-0Z-eFm.title" = "LechuguitApp";
+
+/* Class = "UILabel"; text = "Estado"; ObjectID = "nhQ-A4-xgP"; */
+"nhQ-A4-xgP.text" = "Estado";
+
+/* Class = "UILabel"; text = "Precio:"; ObjectID = "pPa-UA-4E4"; */
+"pPa-UA-4E4.text" = "Precio:";
+
+/* Class = "UILabel"; text = "0,00€"; ObjectID = "q4q-GR-aGO"; */
+"q4q-GR-aGO.text" = "0,00€";
+
+/* Class = "UIButton"; normalTitle = "Bebidas"; ObjectID = "voG-rs-uyn"; */
+"voG-rs-uyn.normalTitle" = "Bebidas";
+
+/* Class = "UINavigationItem"; title = "Comida"; ObjectID = "vv0-L7-NJn"; */
+"vv0-L7-NJn.title" = "Comida";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zvV-mM-4Y2"; */
+"zvV-mM-4Y2.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zxN-F8-TXz"; */
+"zxN-F8-TXz.text" = "Label";

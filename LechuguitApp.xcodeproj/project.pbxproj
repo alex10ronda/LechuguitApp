@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E18DFF41F66DD950047E4B5 /* DetalleProductoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E18DFF31F66DD950047E4B5 /* DetalleProductoViewController.swift */; };
+		4E47F871203206FD0015794E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E47F873203206FD0015794E /* Localizable.strings */; };
 		4E66DE801EE0736F00C78F38 /* PedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */; };
 		4E768C9A1F1D162F0081577A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E768C8D1F1D15E70081577A /* Alamofire.framework */; };
 		4E768C9B1F1D162F0081577A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E768C8D1F1D15E70081577A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -121,12 +122,17 @@
 
 /* Begin PBXFileReference section */
 		4E18DFF31F66DD950047E4B5 /* DetalleProductoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleProductoViewController.swift; sourceTree = "<group>"; };
+		4E47F872203206FD0015794E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E47F874203207000015794E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E66DE7F1EE0736F00C78F38 /* PedidoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidoViewController.swift; sourceTree = "<group>"; };
 		4E768C811F1D15E60081577A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		4E86294D1FB36F12007DEEDF /* Pedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
 		4E93CFD71FCC658B006A6E64 /* CabeceraPedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabeceraPedido.swift; sourceTree = "<group>"; };
 		4E93CFE01FCC65AF006A6E64 /* CabeceraPedido.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CabeceraPedido.xib; sourceTree = "<group>"; };
 		4EBE52491EFBCDF300B01888 /* MisPedidosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisPedidosTableViewController.swift; sourceTree = "<group>"; };
+		4EDA890A2032035300B01C8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		4EDA890B2032035300B01C8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4EDA890D2032044C00B01C8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4EE7D9A81FB9E68100F4FDA9 /* PedidoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidoPresenter.swift; sourceTree = "<group>"; };
 		751A6D041EDC7CC50040A8C5 /* ProductoPedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductoPedido.swift; sourceTree = "<group>"; };
 		751A6D0D1EDC81D80040A8C5 /* UserNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
@@ -252,6 +258,7 @@
 				756B17181EB0B71E00BBB3EF /* LaunchScreen.storyboard */,
 				756B171B1EB0B71E00BBB3EF /* Info.plist */,
 				756B17131EB0B71E00BBB3EF /* Tappas.xcdatamodeld */,
+				4E47F873203206FD0015794E /* Localizable.strings */,
 			);
 			path = LechuguitApp;
 			sourceTree = "<group>";
@@ -425,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E47F871203206FD0015794E /* Localizable.strings in Resources */,
 				756B171A1EB0B71E00BBB3EF /* LaunchScreen.storyboard in Resources */,
 				756B17171EB0B71E00BBB3EF /* Assets.xcassets in Resources */,
 				4E93CFE11FCC65AF006A6E64 /* CabeceraPedido.xib in Resources */,
@@ -480,10 +488,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4E47F873203206FD0015794E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E47F872203206FD0015794E /* es */,
+				4E47F874203207000015794E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		756B17101EB0B71E00BBB3EF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				756B17111EB0B71E00BBB3EF /* Base */,
+				4EDA890A2032035300B01C8D /* es */,
+				4EDA890D2032044C00B01C8D /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -492,6 +511,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				756B17191EB0B71E00BBB3EF /* Base */,
+				4EDA890B2032035300B01C8D /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -503,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -539,7 +560,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -552,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -582,7 +604,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
