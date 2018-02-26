@@ -19,18 +19,33 @@ class MainViewController: UIViewController {
     
     //Muestra el importe total
     @IBOutlet weak var lblTotal: UILabel!
+    @IBOutlet weak var totalText: UILabel!
+    @IBOutlet weak var btnCuenta: UIButton!
+    @IBOutlet weak var btnMapa: UIButton!
     
     var delegate: MainControllerDelegate?
     
     var activityIndicator: UIActivityIndicatorView?
 
-    @IBAction func btnComida(_ sender: Any) {
-       
+   
+    @IBAction func onClickMapa(_ sender: Any) {
+        
+        let directionsURL = "http://maps.apple.com/?saddr=Current%20Location&daddr="+Constants.latitud+","+Constants.longitud
+        guard let url = URL(string: directionsURL) else {
+            return
+        }
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         //Cada vez que aparece la vista establece la cantidad total que está almacenada en Sesion
-        lblTotal.text = ((Session.user?.total)?.description)! + "0 €"
+        if(Session.user != nil){
+            lblTotal.text = ((Session.user?.total)?.description)! + "0 €"
+        }
     }
     
     
@@ -50,11 +65,14 @@ class MainViewController: UIViewController {
         let barbutton: UIBarButtonItem = UIBarButtonItem(customView: Session.countBadge)
         
         self.navigationItem.rightBarButtonItem = barbutton
-
-        //También se establece aquí el importe total
-        //TODO: Quizás no sea necesario porque ya lo hace el viewWillAppear
-        lblTotal.text = ((Session.user?.total)?.description)! + "0 €"
-
+        
+        btnCuenta.layer.cornerRadius = 8.0
+        btnCuenta.clipsToBounds = true
+        
+        btnMapa.layer.cornerRadius = 8.0
+        btnMapa.clipsToBounds = true
+        
+        btnMapa.contentEdgeInsets = UIEdgeInsets(top: 6,left: -10,bottom: 6,right: 20)
     }
 
     

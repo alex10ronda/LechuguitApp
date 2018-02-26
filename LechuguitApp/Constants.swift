@@ -15,7 +15,7 @@ struct Constants {
     
     struct endPoints {
         
-        static let url = "http://192.168.1.36:8080/LechuSpring"
+        static let url = "http://192.168.1.35:8080/LechuSpring"
         static let urlFindEstados = "/estado/get"
         static let urlFindAllFood = "/producto/findAllFood"
         static let urlSaveUser = "/cliente/add"
@@ -46,5 +46,8 @@ struct Constants {
     
     static let TP_COMIDA = "Comida"
     static let TP_BEBIDA = "Bebida"
+    
+    static let latitud = "36.741452"
+    static let longitud = "-5.1648931"
     
 }

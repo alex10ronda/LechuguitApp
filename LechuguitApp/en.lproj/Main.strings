@@ -46,7 +46,7 @@
 "V0b-76-pYf.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Comida"; ObjectID = "WS7-Tk-a2O"; */
-"WS7-Tk-a2O.normalTitle" = "Comida";
+"WS7-Tk-a2O.normalTitle" = "¿Dónde estamos?";
 
 /* Class = "UILabel"; text = "Nombre"; ObjectID = "YBj-Nd-UTd"; */
 "YBj-Nd-UTd.text" = "Nombre";
@@ -88,7 +88,7 @@
 "q4q-GR-aGO.text" = "0,00€";
 
 /* Class = "UIButton"; normalTitle = "Bebidas"; ObjectID = "voG-rs-uyn"; */
-"voG-rs-uyn.normalTitle" = "Bebidas";
+"voG-rs-uyn.normalTitle" = "Pedir Cuenta";
 
 /* Class = "UINavigationItem"; title = "Comida"; ObjectID = "vv0-L7-NJn"; */
 "vv0-L7-NJn.title" = "Comida";
